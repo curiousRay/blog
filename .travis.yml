@@ -5,5 +5,4 @@ install:
   - pip install sphinx
 script: make html
 after_success:
-  - cp -R ./build/html/* ./docs
-
+  - ./push.sh
