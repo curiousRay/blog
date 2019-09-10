@@ -6,6 +6,8 @@
 Welcome to Ray's sky's documentation!
 =====================================
 
+lorem
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
