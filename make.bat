@@ -26,6 +26,11 @@ if errorlevel 9009 (
 )
 
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
+
+rem clean and copy files here
+
+xcopy /y %BUILDDIR%\html\* %BUILDDIR%\..\docs /e
+
 goto end
 
 :help
