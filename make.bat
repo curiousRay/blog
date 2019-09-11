@@ -30,6 +30,7 @@ if errorlevel 9009 (
 rem clean and copy files here
 
 xcopy /y %BUILDDIR%\html\* %BUILDDIR%\..\docs /e
+echo.generated files and moved to \docs
 
 goto end
 
