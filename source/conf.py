@@ -68,8 +68,5 @@ html_theme_options = {
     'style_nav_header_background': '#2980B9',
     # Toc options
     'collapse_navigation': True,
-    'sticky_navigation': True,
     'navigation_depth': 4,
-    'includehidden': True,
-    'titles_only': False
 }
