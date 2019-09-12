@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -9,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; Ray&#39;s sky 0.1 documentation</title>
+  <title>程序设计 &mdash; Ray&#39;s sky 0.1 documentation</title>
   
 
   
@@ -36,8 +35,9 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="author" title="About these documents" href="about.html" />
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="数学原理" href="math.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,8 +87,8 @@
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Class2</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="test2.html">程序设计</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">程序设计</a></li>
 </ul>
 
             
@@ -134,12 +134,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Index</li>
+      <li>程序设计</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
+            <a href="_sources/test2.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -151,11 +153,52 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="id1">
+<h1>程序设计<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>lorem ipsum</p>
+<p>Install the package (or add it to your <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install sphinx_rtd_theme
+</pre></div>
+</div>
+<p># 取得原图与其高斯模糊图像的差值图像
+import PIL.Image
+import PIL.ImageFilter
+import scipy.misc
+import numpy as np</p>
+<dl>
+<dt>def convert_2d(r, h):</dt><dd><p># 矩阵减法
+s = r - h
+if np.min(s) &gt;= 0 and np.max(s) &lt;= 255:</p>
+<blockquote>
+<div><p>return s</p>
+</div></blockquote>
+<p># 线性拉伸
+s = s - np.full(s.shape, np.min(s))
+s = s * 255 / np.max(s)
+s = s.astype(np.uint8)
+return s</p>
+</dd>
+<dt>def convert_3d(r, h):</dt><dd><p>s_dsplit = []
+for d in range(r.shape[2]):</p>
+<blockquote>
+<div><p>rr = r[:, :, d]
+hh = h[:, :, d]
+ss = convert_2d(rr, hh)
+s_dsplit.append(ss)</p>
+</div></blockquote>
+<p>s = np.dstack(s_dsplit)
+return s</p>
+</dd>
+</dl>
+<p>im = PIL.Image.open(‘/img/jp.jpg’)
+im = im.convert(‘RGB’)
+im_mat = scipy.misc.fromimage(im)
+# 高斯模糊
+im_converted = im.filter(PIL.ImageFilter.GaussianBlur(radius=2))
+im_converted_mat = scipy.misc.fromimage(im_converted)
+im_sub_mat = convert_3d(im_mat, im_converted_mat)
+im_sub = PIL.Image.fromarray(im_sub_mat)
+im_sub.show()</p>
 </div>
 
 
@@ -163,6 +206,13 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="math.html" class="btn btn-neutral float-left" title="数学原理" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>

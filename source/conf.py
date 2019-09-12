@@ -34,6 +34,7 @@ release = '0.1'
 
 extensions = [
     'sphinx_rtd_theme',
+    'sphinx.ext.mathjax',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -57,6 +58,8 @@ html_baseurl = 'https://curiousray.github.io/blog/'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+html_show_sourcelink = True
+
 html_theme_options = {
     'canonical_url': '',
     'analytics_id': '',  #  Provided by Google in your dashboard, e.g: UA-XXXXXXX-1
@@ -64,9 +67,10 @@ html_theme_options = {
     'display_version': False,
     'prev_next_buttons_location': 'bottom',
     'style_external_links': False,
-    'vcs_pageview_mode': '',
     'style_nav_header_background': '#2980B9',
     # Toc options
-    'collapse_navigation': True,
+    'collapse_navigation': False,
     'navigation_depth': 4,
 }
+
+mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
