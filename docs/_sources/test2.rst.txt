@@ -1,52 +1,148 @@
 程序设计
-=======
+=========
 
 lorem ipsum
 
 Install the package (or add it to your ``requirements.txt`` file):
 
-.. code:: bash
+.. list-table:: This is a list table with images in it.
 
-    pip install sphinx_rtd_theme
+    * - .. figure:: https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg
 
-.. code:: python
+           This is a short caption for a figure.
 
-# 取得原图与其高斯模糊图像的差值图像
-import PIL.Image
-import PIL.ImageFilter
-import scipy.misc
-import numpy as np
+      - .. figure:: https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg
+
+           This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+           Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.
+
+fig
+----
+
+.. figure:: https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg
+   :align: center
+
+img
+----
+
+.. image:: https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg
+   :target: https://cn.bing.com
+Literal Blocks
+--------------
+
+Literal blocks are indicated with a double-colon ("::") at the end of
+the preceding paragraph (over there ``-->``).  They can be indented::
+
+    if literal_block:
+        text = 'is left as-is'
+        spaces_and_linebreaks = 'are preserved'
+        markup_processing = None
+
+Or they can be quoted without indentation::
+
+>> Great idea!
+>
+> Why didn't I think of that?
+
+Line Blocks
+-----------
+
+| This is a line block.  It ends with a blank line.
+|     Each new line begins with a vertical bar ("|").
+|     Line breaks and initial indents are preserved.
+| Continuation lines are wrapped portions of long lines;
+  they begin with a space in place of the vertical bar.
+|     The left edge of a continuation line need not be aligned with
+  the left edge of the text above it.
+
+| This is a second line block.
+|
+| Blank lines are permitted internally, but they must begin with a "|".
+
+Take it away, Eric the Orchestra Leader!
+
+    | A one, two, a one two three four
+    |
+    | Half a bee, philosophically,
+    |     must, *ipso facto*, half not be.
+    | But half the bee has got to be,
+    |     *vis a vis* its entity.  D'you see?
+    |
+    | But can a bee be said to be
+    |     or not to be an entire bee,
+    |         when half the bee is not a bee,
+    |             due to some ancient injury?
+    |
+    | Singing...
+
+Block Quotes
+------------
+
+Block quotes consist of indented body elements:
+
+    My theory by A. Elk.  Brackets Miss, brackets.  This theory goes
+    as follows and begins now.  All brontosauruses are thin at one
+    end, much much thicker in the middle and then thin again at the
+    far end.  That is my theory, it is mine, and belongs to me and I
+    own it, and what it is too.
+
+    -- Anne Elk (Miss)
+
+tip
+-----
+
+.. Tip:: 15% if the service is good.
+
+    +---------+
+    | Example |
+    +=========+
+    | Thing1  |
+    +---------+
+    | Thing2  |
+    +---------+
+    | Thing3  |
+    +---------+
+
+hihihih
+
+.. code-block:: python
+   :linenos:
+   :emphasize-lines: 3,5
+   :caption: this is cap
+
+   def some_function():
+       interesting = False
+       print 'This line is highlighted.'
+       print 'This one is not...'
+       print '...but this one is.'
+
+.. parsed-literal::
+
+    # parsed-literal test
+    curl -O http://someurl/release-|version|.tar-gz
 
 
-def convert_2d(r, h):
-    # 矩阵减法
-    s = r - h
-    if np.min(s) >= 0 and np.max(s) <= 255:
-        return s
-    # 线性拉伸
-    s = s - np.full(s.shape, np.min(s))
-    s = s * 255 / np.max(s)
-    s = s.astype(np.uint8)
-    return s
+compound paragraph
+--------------------
 
+.. compound::
 
-def convert_3d(r, h):
-    s_dsplit = []
-    for d in range(r.shape[2]):
-        rr = r[:, :, d]
-        hh = h[:, :, d]
-        ss = convert_2d(rr, hh)
-        s_dsplit.append(ss)
-    s = np.dstack(s_dsplit)
-    return s
+   This paragraph contains a literal block::
 
+       Connecting... OK
+       Transmitting data... OK
+       Disconnecting... OK
 
-im = PIL.Image.open('/img/jp.jpg')
-im = im.convert('RGB')
-im_mat = scipy.misc.fromimage(im)
-# 高斯模糊
-im_converted = im.filter(PIL.ImageFilter.GaussianBlur(radius=2))
-im_converted_mat = scipy.misc.fromimage(im_converted)
-im_sub_mat = convert_3d(im_mat, im_converted_mat)
-im_sub = PIL.Image.fromarray(im_sub_mat)
-im_sub.show()
+   and thus consists of a simple paragraph, a literal block, and
+   another simple paragraph.  Nonetheless it is semantically *one*
+   paragraph.
+
+guilabel
+---------
+
+:guilabel:`Some action`
+
+downloadlink
+---------------
+
+:download:`This and should wrap white-spaces <https://cdn.bootcss.com/mathjax/2.7.6/latest.js>`

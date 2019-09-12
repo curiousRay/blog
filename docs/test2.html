@@ -88,7 +88,18 @@
 </ul>
 <p class="caption"><span class="caption-text">Class2</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">程序设计</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">程序设计</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fig">fig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#img">img</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#literal-blocks">Literal Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#line-blocks">Line Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#block-quotes">Block Quotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tip">tip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compound-paragraph">compound paragraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#guilabel">guilabel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#downloadlink">downloadlink</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -157,48 +168,178 @@
 <h1>程序设计<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>lorem ipsum</p>
 <p>Install the package (or add it to your <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install sphinx_rtd_theme
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">This is a list table with images in it.</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id3">
+<img alt="https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg" src="https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg" />
+<p class="caption"><span class="caption-text">This is a short caption for a figure.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id4">
+<img alt="https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg" src="https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg" />
+<p class="caption"><span class="caption-text">This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="fig">
+<h2>fig<a class="headerlink" href="#fig" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<img alt="https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg" src="https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg" />
+</div>
+</div>
+<div class="section" id="img">
+<h2>img<a class="headerlink" href="#img" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://cn.bing.com"><img alt="https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg" src="https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg" /></a>
+</div>
+<div class="section" id="literal-blocks">
+<h2>Literal Blocks<a class="headerlink" href="#literal-blocks" title="Permalink to this headline">¶</a></h2>
+<p>Literal blocks are indicated with a double-colon (“::”) at the end of
+the preceding paragraph (over there <code class="docutils literal notranslate"><span class="pre">--&gt;</span></code>).  They can be indented:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">literal_block</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;is left as-is&#39;</span>
+    <span class="n">spaces_and_linebreaks</span> <span class="o">=</span> <span class="s1">&#39;are preserved&#39;</span>
+    <span class="n">markup_processing</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
-<p># 取得原图与其高斯模糊图像的差值图像
-import PIL.Image
-import PIL.ImageFilter
-import scipy.misc
-import numpy as np</p>
-<dl>
-<dt>def convert_2d(r, h):</dt><dd><p># 矩阵减法
-s = r - h
-if np.min(s) &gt;= 0 and np.max(s) &lt;= 255:</p>
+<p>Or they can be quoted without indentation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt; Great idea!
+&gt;
+&gt; Why didn&#39;t I think of that?
+</pre></div>
+</div>
+</div>
+<div class="section" id="line-blocks">
+<h2>Line Blocks<a class="headerlink" href="#line-blocks" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">This is a line block.  It ends with a blank line.</div>
+<div class="line-block">
+<div class="line">Each new line begins with a vertical bar (“|”).</div>
+<div class="line">Line breaks and initial indents are preserved.</div>
+</div>
+<div class="line">Continuation lines are wrapped portions of long lines;
+they begin with a space in place of the vertical bar.</div>
+<div class="line-block">
+<div class="line">The left edge of a continuation line need not be aligned with
+the left edge of the text above it.</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">This is a second line block.</div>
+<div class="line"><br /></div>
+<div class="line">Blank lines are permitted internally, but they must begin with a “|”.</div>
+</div>
+<p>Take it away, Eric the Orchestra Leader!</p>
 <blockquote>
-<div><p>return s</p>
+<div><div class="line-block">
+<div class="line">A one, two, a one two three four</div>
+<div class="line"><br /></div>
+<div class="line">Half a bee, philosophically,</div>
+<div class="line-block">
+<div class="line">must, <em>ipso facto</em>, half not be.</div>
+</div>
+<div class="line">But half the bee has got to be,</div>
+<div class="line-block">
+<div class="line"><em>vis a vis</em> its entity.  D’you see?</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">But can a bee be said to be</div>
+<div class="line-block">
+<div class="line">or not to be an entire bee,</div>
+<div class="line-block">
+<div class="line">when half the bee is not a bee,</div>
+<div class="line-block">
+<div class="line">due to some ancient injury?</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="line">Singing…</div>
+</div>
 </div></blockquote>
-<p># 线性拉伸
-s = s - np.full(s.shape, np.min(s))
-s = s * 255 / np.max(s)
-s = s.astype(np.uint8)
-return s</p>
-</dd>
-<dt>def convert_3d(r, h):</dt><dd><p>s_dsplit = []
-for d in range(r.shape[2]):</p>
+</div>
+<div class="section" id="block-quotes">
+<h2>Block Quotes<a class="headerlink" href="#block-quotes" title="Permalink to this headline">¶</a></h2>
+<p>Block quotes consist of indented body elements:</p>
 <blockquote>
-<div><p>rr = r[:, :, d]
-hh = h[:, :, d]
-ss = convert_2d(rr, hh)
-s_dsplit.append(ss)</p>
+<div><p>My theory by A. Elk.  Brackets Miss, brackets.  This theory goes
+as follows and begins now.  All brontosauruses are thin at one
+end, much much thicker in the middle and then thin again at the
+far end.  That is my theory, it is mine, and belongs to me and I
+own it, and what it is too.</p>
+<p class="attribution">—Anne Elk (Miss)</p>
 </div></blockquote>
-<p>s = np.dstack(s_dsplit)
-return s</p>
-</dd>
-</dl>
-<p>im = PIL.Image.open(‘/img/jp.jpg’)
-im = im.convert(‘RGB’)
-im_mat = scipy.misc.fromimage(im)
-# 高斯模糊
-im_converted = im.filter(PIL.ImageFilter.GaussianBlur(radius=2))
-im_converted_mat = scipy.misc.fromimage(im_converted)
-im_sub_mat = convert_3d(im_mat, im_converted_mat)
-im_sub = PIL.Image.fromarray(im_sub_mat)
-im_sub.show()</p>
+</div>
+<div class="section" id="tip">
+<h2>tip<a class="headerlink" href="#tip" title="Permalink to this headline">¶</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>15% if the service is good.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Thing1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Thing2</p></td>
+</tr>
+<tr class="row-even"><td><p>Thing3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>hihihih</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">this is cap</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">some_function</span><span class="p">():</span>
+    <span class="n">interesting</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="hll">    <span class="k">print</span> <span class="s1">&#39;This line is highlighted.&#39;</span>
+</span>    <span class="k">print</span> <span class="s1">&#39;This one is not...&#39;</span>
+<span class="hll">    <span class="k">print</span> <span class="s1">&#39;...but this one is.&#39;</span>
+</span></pre></div>
+</td></tr></table></div>
+</div>
+<pre class="literal-block"># parsed-literal test
+curl -O <a class="reference external" href="http://someurl/release">http://someurl/release</a>-.tar-gz</pre>
+</div>
+<div class="section" id="compound-paragraph">
+<h2>compound paragraph<a class="headerlink" href="#compound-paragraph" title="Permalink to this headline">¶</a></h2>
+<div class="compound">
+<p class="compound-first">This paragraph contains a literal block:</p>
+<div class="compound-middle highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Connecting</span><span class="o">...</span> <span class="n">OK</span>
+<span class="n">Transmitting</span> <span class="n">data</span><span class="o">...</span> <span class="n">OK</span>
+<span class="n">Disconnecting</span><span class="o">...</span> <span class="n">OK</span>
+</pre></div>
+</div>
+<p class="compound-last">and thus consists of a simple paragraph, a literal block, and
+another simple paragraph.  Nonetheless it is semantically <em>one</em>
+paragraph.</p>
+</div>
+</div>
+<div class="section" id="guilabel">
+<h2>guilabel<a class="headerlink" href="#guilabel" title="Permalink to this headline">¶</a></h2>
+<p><span class="guilabel">Some action</span></p>
+</div>
+<div class="section" id="downloadlink">
+<h2>downloadlink<a class="headerlink" href="#downloadlink" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference download external" download="" href="https://cdn.bootcss.com/mathjax/2.7.6/latest.js"><code class="xref download docutils literal notranslate"><span class="pre">This</span> <span class="pre">and</span> <span class="pre">should</span> <span class="pre">wrap</span> <span class="pre">white-spaces</span></code></a></p>
+</div>
 </div>
 
 
