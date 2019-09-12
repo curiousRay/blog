@@ -62,7 +62,7 @@ html_static_path = ['_static']
 html_show_sourcelink = True
 
 html_theme_options = {
-    'canonical_url': '',
+    'canonical_url': 'raysky.net',
     'analytics_id': '',  #  Provided by Google in your dashboard, e.g: UA-XXXXXXX-1
     'logo_only': False,
     'display_version': False,
