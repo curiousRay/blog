@@ -53,7 +53,7 @@ exclude_patterns = []
 #
 html_theme = 'sphinx_rtd_theme'
 
-html_baseurl = 'raysky.net'
+html_baseurl = 'http://raysky.net'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
@@ -62,7 +62,7 @@ html_static_path = ['_static']
 html_show_sourcelink = True
 
 html_theme_options = {
-    'canonical_url': 'raysky.net',
+    'canonical_url': '',
     'analytics_id': '',  #  Provided by Google in your dashboard, e.g: UA-XXXXXXX-1
     'logo_only': False,
     'display_version': False,
