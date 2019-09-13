@@ -49,13 +49,17 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-html_css_files = ['style.css']
+
+# add custom css files
+def setup(app):
+    app.add_stylesheet('style.css')
+
+html_theme = 'sphinx_rtd_theme'
 
 html_theme_options = {
     'canonical_url': '',
@@ -74,4 +78,3 @@ mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-
 
 # code highlight
 pygments_style = 'trac'
-
