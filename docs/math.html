@@ -185,6 +185,37 @@ Here is another:</p>
 <div class="section" id="step-1">
 <h2>step 1 第一步<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h2>
 <p>this is a subtitle</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">infer</span><span class="p">(</span><span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="o">&amp;</span><span class="n">input_image</span><span class="p">,</span> <span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="o">&amp;</span><span class="n">output_image</span><span class="p">,</span> <span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="o">&amp;</span><span class="n">scores_matrix</span><span class="p">,</span> <span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="o">&amp;</span><span class="n">class_ids_matrix</span><span class="p">,</span> <span class="n">MaskRCNN</span> <span class="o">&amp;</span><span class="n">model</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">InferenceConfig</span><span class="o">&gt;</span> <span class="n">config</span><span class="p">,</span> <span class="kt">bool</span> <span class="o">&amp;</span><span class="n">IsMaskRCNNInferring</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">IsMaskRCNNInferring</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="n">inference</span><span class="p">(</span><span class="n">input_image</span><span class="p">,</span> <span class="n">output_image</span><span class="p">,</span> <span class="n">scores_matrix</span><span class="p">,</span> <span class="n">class_ids_matrix</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">config</span><span class="p">);</span>
+  <span class="n">IsMaskRCNNInferring</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="k">auto</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">steady_clock</span><span class="o">::</span><span class="n">now</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+  <span class="c1">// Set MaskRCNN Parameters</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">model_path</span> <span class="o">=</span> <span class="s">&quot;/home/src/MaskFusion_cpp/model/mask_rcnn_coco.dat&quot;</span><span class="p">;</span>
+  <span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">input_image_bgr</span><span class="p">;</span>
+  <span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">output_image</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="n">CV_8UC3</span><span class="p">,</span> <span class="n">cv</span><span class="o">::</span><span class="n">Scalar</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">));</span>
+  <span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">scores_matrix</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="n">CV_32FC1</span><span class="p">,</span> <span class="n">cv</span><span class="o">::</span><span class="n">Scalar</span><span class="p">(</span><span class="mf">0.0</span><span class="p">));</span>
+  <span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">class_ids_matrix</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="n">CV_32FC1</span><span class="p">,</span> <span class="n">cv</span><span class="o">::</span><span class="n">Scalar</span><span class="p">(</span><span class="mf">0.0</span><span class="p">));;</span>
+  <span class="kt">bool</span> <span class="n">IsMaskRCNNInferring</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix4f</span> <span class="n">mask_pose</span> <span class="o">=</span> <span class="n">Eigen</span><span class="o">::</span><span class="n">Matrix4f</span><span class="o">::</span><span class="n">Identity</span><span class="p">();</span>
+
+  <span class="k">auto</span> <span class="n">config</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">InferenceConfig</span><span class="o">&gt;</span><span class="p">();</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">model_dir</span> <span class="o">=</span> <span class="s">&quot;./&quot;</span><span class="p">;</span>
+  <span class="c1">// Create model object.</span>
+  <span class="n">MaskRCNN</span> <span class="n">model</span><span class="p">(</span><span class="n">model_dir</span><span class="p">,</span> <span class="n">config</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">config</span><span class="o">-&gt;</span><span class="n">gpu_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">-&gt;</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">::</span><span class="n">DeviceType</span><span class="o">::</span><span class="n">CUDA</span><span class="p">);</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">tie</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span> <span class="o">=</span> <span class="n">model_prepare</span><span class="p">(</span><span class="n">model_path</span><span class="p">);</span>
+
+  <span class="n">caffe</span><span class="o">::</span><span class="n">Caffe</span><span class="o">::</span><span class="n">SetDevice</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="n">caffe</span><span class="o">::</span><span class="n">Caffe</span><span class="o">::</span><span class="n">set_mode</span><span class="p">(</span><span class="n">caffe</span><span class="o">::</span><span class="n">Caffe</span><span class="o">::</span><span class="n">GPU</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 </div>
 

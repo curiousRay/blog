@@ -25,7 +25,6 @@ author = 'curiousRay'
 # The full version, including alpha/beta/rc tags
 release = '0.1'
 
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -35,7 +34,6 @@ release = '0.1'
 extensions = [
     'sphinx_rtd_theme',
     'sphinx.ext.mathjax',
-    'sphinx.ext.viewcode',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -58,8 +56,6 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_show_sourcelink = True
-
 html_theme_options = {
     'canonical_url': '',
     'analytics_id': '',  #  Provided by Google in your dashboard, e.g: UA-XXXXXXX-1
@@ -74,3 +70,5 @@ html_theme_options = {
 }
 
 mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+
+pygments_style = 'trac'
