@@ -1,5 +1,5 @@
 数学原理
-=====
+=========
 
 loremremremrem
 
@@ -23,7 +23,7 @@ Here is another:
 this is another math
 
 step 1 第一步
-------------
+--------------
 
 this is a subtitle
 
