@@ -110,6 +110,9 @@ hihihih
    :emphasize-lines: 3,5
    :caption: this is cap
 
+   import hljs as hljs
+   from hljs import hljs
+
    def some_function():
        interesting = False
        print 'This line is highlighted.'

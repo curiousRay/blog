@@ -55,6 +55,7 @@ html_theme = 'sphinx_rtd_theme'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_css_files = ['style.css']
 
 html_theme_options = {
     'canonical_url': '',
@@ -63,7 +64,7 @@ html_theme_options = {
     'display_version': False,
     'prev_next_buttons_location': 'bottom',
     'style_external_links': False,
-    'style_nav_header_background': '#2980B9',
+    #'style_nav_header_background': '#2980B9',
     # Toc options
     'collapse_navigation': False,
     'navigation_depth': 4,
@@ -71,4 +72,6 @@ html_theme_options = {
 
 mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
+# code highlight
 pygments_style = 'trac'
+
