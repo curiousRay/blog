@@ -9,10 +9,11 @@
    :caption: Class1课程一
    :maxdepth: 2
 
-   math
+   test
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Class2
+   :maxdepth: 1
+   :caption: 未分类
+   :numbered:
 
-   test2
+   Misc/setup-sphinx

@@ -79,4 +79,6 @@ mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-
 # code highlight
 pygments_style = 'trac'
 
+html_title = 'Ray\'s sky'
+
 html_favicon = 'favicon.ico'

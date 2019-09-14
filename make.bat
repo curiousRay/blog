@@ -24,13 +24,13 @@ if errorlevel 9009 (
 	echo.http://sphinx-doc.org/
 	exit /b 1
 )
+rem empty build folder
 
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 
-rem clean and copy files here
-
+rem copy files
+xcopy /y %SOURCEDIR%\essentials\* %BUILDDIR%\html /e
 xcopy /y %BUILDDIR%\html\* %BUILDDIR%\..\docs /e
-echo.generated files and moved to \docs
 
 goto end
 
