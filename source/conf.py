@@ -62,7 +62,7 @@ def setup(app):
 html_theme = 'sphinx_rtd_theme'
 
 html_theme_options = {
-    'canonical_url': 'https://raysky.net',
+    'canonical_url': '',
     'analytics_id': '',  #  Provided by Google in your dashboard, e.g: UA-XXXXXXX-1
     'logo_only': False,
     'display_version': False,
