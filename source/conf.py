@@ -63,7 +63,7 @@ html_theme = 'sphinx_rtd_theme'
 
 html_theme_options = {
     'canonical_url': '',
-    'analytics_id': '',  #  Provided by Google in your dashboard, e.g: UA-XXXXXXX-1
+    'analytics_id': 'UA-148061851-1',  #  Provided by Google in your dashboard, e.g: UA-XXXXXXX-1
     'logo_only': False,
     'display_version': False,
     'prev_next_buttons_location': 'bottom',
