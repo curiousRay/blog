@@ -54,7 +54,7 @@ exclude_patterns = []
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-html_js_files = ['//www.google-analytics.com/gtag/analytics.js', 'js.js']
+html_js_files = ['js.js']
 # add custom css files
 def setup(app):
     app.add_stylesheet('style.css')
