@@ -3,7 +3,7 @@ The Front Page
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-在此细心地记录。
+细心地在此记录。
 
 Connect with me
 ---------------

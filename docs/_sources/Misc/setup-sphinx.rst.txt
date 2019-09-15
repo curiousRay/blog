@@ -1,5 +1,3 @@
-.. |location_link| raw:: html
-
 =======================
 Sphinx文档框架搭建速记
 =======================
@@ -90,7 +88,7 @@ Github项目设置的pages选项勾选Force https，稍候即可实现http自动
     mathjax_path = 'https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
 设置代码高亮配色
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 Sphinx使用 `Pygments <http://pygments.org/>`_ 作为默认高亮工具。
 
