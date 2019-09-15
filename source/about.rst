@@ -11,7 +11,7 @@ Connect with me
     :target: https://t.me/curiousRay/
     :alt: Telegram
 
-.. image:: https://cdn.raysky.net/assets/badges/keybase-pgp-curiousray.svg
+.. image:: https://cdn.raysky.net/assets/badges/pgp-curiousray.svg
     :target: #
     :alt: PGP
 
