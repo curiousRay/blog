@@ -54,7 +54,7 @@ exclude_patterns = []
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-html_js_files = ['js.js']
+html_js_files = ['https://www.googletagmanager.com/gtag/js?id=UA-148061851-1', 'js.js']
 # add custom css files
 def setup(app):
     app.add_stylesheet('style.css')
@@ -62,8 +62,8 @@ def setup(app):
 html_theme = 'sphinx_rtd_theme'
 
 html_theme_options = {
-    'canonical_url': 'raysky.net',
-    'analytics_id': 'UA-148061851-1',  #  Provided by Google in your dashboard, e.g: UA-XXXXXXX-1
+    'canonical_url': 'https://raysky.net',
+    'analytics_id': '',  #  Provided by Google in your dashboard, e.g: UA-XXXXXXX-1
     'logo_only': False,
     'display_version': False,
     'prev_next_buttons_location': 'bottom',
