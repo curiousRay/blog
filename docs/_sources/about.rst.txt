@@ -11,13 +11,13 @@ Connect with me
     :target: https://t.me/curiousRay/
     :alt: Telegram
 
-.. image:: https://cdn.raysky.net/assets/badges/mail-infate@protonmail.svg
-    :target: #
-    :alt: Mail
-
 .. image:: https://cdn.raysky.net/assets/badges/keybase-pgp-curiousray.svg
     :target: #
     :alt: PGP
+
+.. image:: https://cdn.raysky.net/assets/badges/mail-infate@protonmail.svg
+    :target: #
+    :alt: Mail
 
 Licensing
 -----------
