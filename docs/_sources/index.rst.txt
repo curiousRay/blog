@@ -14,7 +14,7 @@
 
 .. toctree::
    :maxdepth: 1
-   :caption: 未分类
+   :caption: Misc
    :numbered:
 
    Misc/setup-sphinx
