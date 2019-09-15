@@ -3,8 +3,6 @@ The Front Page
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-curiousRay has been publishing here elaborately since 2019.09.
-
 在此细心地记录。
 
 Connect with me
