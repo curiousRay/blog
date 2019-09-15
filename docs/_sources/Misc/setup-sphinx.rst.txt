@@ -104,16 +104,16 @@ Sphinx使用 `Pygments <http://pygments.org/>`_ 作为默认高亮工具。
     from pygments.styles import get_all_styles
     print(list(get_all_styles()))
 
-添加自定义CSS [#]_
-^^^^^^^^^^^^^^^^^^
+添加自定义CSS和JS文件
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
     # file: source/conf.py
-    def setup(app):
-    app.add_stylesheet('style.css')
+    html_css_files = ['style.css']
+    html_js_files = ['script.js']
 
-其中 :guilabel:`style.css` 位于 :guilabel:`source\\_static`。
+其中 :guilabel:`style.css` 和 :guilabel:`script.js` 位于 ``html_static_path`` 所指的路径。
 
 设置favicon
 ^^^^^^^^^^^^^
@@ -130,5 +130,4 @@ References
 
 .. [#] https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/
 .. [#] https://help.github.com/cn/articles/creating-a-custom-404-page-for-your-github-pages-site
-.. [#] https://github.com/sphinxjp/sphinx-users.jp/blob/master/source/conf.py#L213
 .. [#] https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_favicon

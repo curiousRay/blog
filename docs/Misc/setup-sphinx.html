@@ -27,7 +27,6 @@
         <script type="text/javascript" src="../_static/underscore.js"></script>
         <script type="text/javascript" src="../_static/doctools.js"></script>
         <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script type="text/javascript" src="../_static/js.js"></script>
         <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
@@ -108,7 +107,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id9">1.4.2. 安装主题</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mathjax">1.4.3. 从外部来源加载MathJax</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id11">1.4.4. 设置代码高亮配色</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#css">1.4.5. 添加自定义CSS </a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cssjs">1.4.5. 添加自定义CSS和JS文件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#favicon">1.4.6. 设置favicon</a></li>
 </ul>
 </li>
@@ -215,7 +214,7 @@ sphinx-quickstart
 <p>同时以及新建一个空的 <span class="guilabel">.nojekyll</span> 文件，并push到GitHub。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>这样做的原因是Github pages对jekyll框架的处理机制会排除 <span class="guilabel">_static</span> 文件夹。而我们的静态js和css等文件正是存在于此。排除它们的后果是加载非HTML文档时会报 <code class="docutils literal notranslate"><span class="pre">404</span> <span class="pre">ERR_ABORTED</span></code> <a class="footnote-reference brackets" href="#id14" id="id5">1</a>。</p>
+<p>这样做的原因是Github pages对jekyll框架的处理机制会排除 <span class="guilabel">_static</span> 文件夹。而我们的静态js和css等文件正是存在于此。排除它们的后果是加载非HTML文档时会报 <code class="docutils literal notranslate"><span class="pre">404</span> <span class="pre">ERR_ABORTED</span></code> <a class="footnote-reference brackets" href="#id13" id="id5">1</a>。</p>
 </div>
 <p>Github项目设置的pages选项勾选Force https，稍候即可实现http自动跳转至https。</p>
 </div>
@@ -223,7 +222,7 @@ sphinx-quickstart
 <h2>1.4. 定制<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id7">
 <h3>1.4.1. 自定义404页面<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>静态文件根目录手动建立 <span class="guilabel">404.html</span> 文件，在文件的最前面加上front matter后push即可 <a class="footnote-reference brackets" href="#id15" id="id8">2</a>。</p>
+<p>静态文件根目录手动建立 <span class="guilabel">404.html</span> 文件，在文件的最前面加上front matter后push即可 <a class="footnote-reference brackets" href="#id14" id="id8">2</a>。</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
 <span class="nt">permalink</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/404.html</span>
 <span class="nn">---</span>
@@ -259,14 +258,14 @@ sphinx-quickstart
 </pre></div>
 </div>
 </div>
-<div class="section" id="css">
-<h3>1.4.5. 添加自定义CSS <a class="footnote-reference brackets" href="#id16" id="id12">3</a><a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="cssjs">
+<h3>1.4.5. 添加自定义CSS和JS文件<a class="headerlink" href="#cssjs" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># file: source/conf.py</span>
-<span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
-<span class="n">app</span><span class="o">.</span><span class="n">add_stylesheet</span><span class="p">(</span><span class="s1">&#39;style.css&#39;</span><span class="p">)</span>
+<span class="n">html_css_files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;style.css&#39;</span><span class="p">]</span>
+<span class="n">html_js_files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;script.js&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>其中 <span class="guilabel">style.css</span> 位于 <span class="guilabel">source\_static</span>。</p>
+<p>其中 <span class="guilabel">style.css</span> 和 <span class="guilabel">script.js</span> 位于 <code class="docutils literal notranslate"><span class="pre">html_static_path</span></code> 所指的路径。</p>
 </div>
 <div class="section" id="favicon">
 <h3>1.4.6. 设置favicon<a class="headerlink" href="#favicon" title="Permalink to this headline">¶</a></h3>
@@ -274,22 +273,19 @@ sphinx-quickstart
 <span class="n">html_favicon</span> <span class="o">=</span> <span class="s1">&#39;favicon.ico&#39;</span>
 </pre></div>
 </div>
-<p>其中 <span class="guilabel">favicon.ico</span> 位于 <span class="guilabel">source</span> <a class="footnote-reference brackets" href="#id17" id="id13">4</a>。</p>
+<p>其中 <span class="guilabel">favicon.ico</span> 位于 <span class="guilabel">source</span> <a class="footnote-reference brackets" href="#id15" id="id12">3</a>。</p>
 </div>
 </div>
 <div class="section" id="references">
 <h2>1.5. References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <dl class="footnote brackets">
-<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
 <dd><p><a class="reference external" href="https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/">https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/</a></p>
 </dd>
-<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id8">2</a></span></dt>
+<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id8">2</a></span></dt>
 <dd><p><a class="reference external" href="https://help.github.com/cn/articles/creating-a-custom-404-page-for-your-github-pages-site">https://help.github.com/cn/articles/creating-a-custom-404-page-for-your-github-pages-site</a></p>
 </dd>
-<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id12">3</a></span></dt>
-<dd><p><a class="reference external" href="https://github.com/sphinxjp/sphinx-users.jp/blob/master/source/conf.py#L213">https://github.com/sphinxjp/sphinx-users.jp/blob/master/source/conf.py#L213</a></p>
-</dd>
-<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id13">4</a></span></dt>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id12">3</a></span></dt>
 <dd><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_favicon">https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_favicon</a></p>
 </dd>
 </dl>
