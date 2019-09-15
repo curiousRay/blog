@@ -61,7 +61,7 @@ Github项目设置的pages选项勾选Force https，稍候即可实现http自动
 自定义404页面
 ^^^^^^^^^^^^^
 
-静态文件根目录手动建立 :guilabel:`404.html` 文件，在文件的最前面加上front matter后push即可。
+静态文件根目录手动建立 :guilabel:`404.html` 文件，在文件的最前面加上front matter后push即可 [#]_。
 
 .. code-block:: yaml
 
@@ -129,5 +129,6 @@ References
 -----------
 
 .. [#] https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/
+.. [#] https://help.github.com/cn/articles/creating-a-custom-404-page-for-your-github-pages-site
 .. [#] https://github.com/sphinxjp/sphinx-users.jp/blob/master/source/conf.py#L213
 .. [#] https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_favicon

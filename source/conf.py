@@ -19,7 +19,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = "Ray's sky"
-copyright = '2019, curiousRay'
+copyright = '2019, curiousRay. Content licensed under CC BY 3.0'
 author = 'curiousRay'
 
 # The full version, including alpha/beta/rc tags

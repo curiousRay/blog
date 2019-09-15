@@ -6,8 +6,9 @@
 .. include:: ./about.rst
 
 .. toctree::
-   :caption: Class1课程一
-   :maxdepth: 2
+   :caption: Class1
+   :maxdepth: 1
+   :numbered:
 
    test
 
