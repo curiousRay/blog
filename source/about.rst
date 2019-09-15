@@ -7,7 +7,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 Connect with me
 ---------------
-
 .. image:: https://cdn.raysky.net/assets/badges/telegram-@curiousRay-brightgreen.svg
     :target: https://t.me/curiousRay/
     :alt: Telegram
@@ -15,6 +14,10 @@ Connect with me
 .. image:: https://cdn.raysky.net/assets/badges/mail-infate@protonmail.svg
     :target: #
     :alt: Mail
+
+.. image:: https://cdn.raysky.net/assets/badges/keybase-pgp-curiousray.svg
+    :target: #
+    :alt: PGP
 
 Licensing
 -----------
