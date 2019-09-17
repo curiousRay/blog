@@ -34,7 +34,6 @@ release = '0.1'
 extensions = [
     'sphinx_rtd_theme',
     'sphinx.ext.mathjax',
-    'sphinxcontrib.googleanalytics',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -57,6 +56,10 @@ exclude_patterns = []
 html_static_path = ['_static']
 
 html_css_files = ['style.css']
+# html_javascript_files = ['https://www.googletagmanager.com/gtag/js?id=UA-148061851-1', 'ga.js']
+
+app.add_javascript('//www.google-analytics.com/analytics.js?id=UA-148061851-1')
+app.add_javascript('ga.js')
 # add custom css files
 
 html_theme = 'sphinx_rtd_theme'
@@ -81,5 +84,3 @@ pygments_style = 'trac'
 html_title = 'Ray\'s sky'
 
 html_favicon = 'favicon.ico'
-
-googleanalytics_id = 'UA-148061851-1'
