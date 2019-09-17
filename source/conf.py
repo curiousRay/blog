@@ -34,6 +34,7 @@ release = '0.1'
 extensions = [
     'sphinx_rtd_theme',
     'sphinx.ext.mathjax',
+    'sphinxcontrib.googleanalytics',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -62,7 +63,6 @@ html_theme = 'sphinx_rtd_theme'
 
 html_theme_options = {
     'canonical_url': '',
-    'analytics_id': '',  #  Provided by Google in your dashboard, e.g: UA-XXXXXXX-1
     'logo_only': False,
     'display_version': False,
     'prev_next_buttons_location': 'bottom',
@@ -81,3 +81,5 @@ pygments_style = 'trac'
 html_title = 'Ray\'s sky'
 
 html_favicon = 'favicon.ico'
+
+googleanalytics_id = 'UA-148061851-1'
