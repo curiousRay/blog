@@ -3,7 +3,7 @@ LaTeX踩坑笔记
 ==============
 
 正确渲染汉字
---------
+-------------
 
 在文档头部加入以下控制序列：
 
@@ -12,25 +12,25 @@ LaTeX踩坑笔记
     \documentclass[12pt, a4paper]{ctexart}
 
 插入MATLAB代码块
-----------------
+-----------------
 
 将 `mcode.sty <https://github.com/nasa/nasa-latex-docs/blob/master/support/packages/mcode/mcode.sty>`_ 文件置于文档根目录，再通过 ``\usepackage{mcode}`` 调用。
 
 将section的标题由默认的居中改为左对齐
-------------------------------------
+--------------------------------------
 
 .. code-block:: latex
 
     \CTEXsetup[format={\Large\bfseries}]{section}
 
-将section的序号设置为从**0**开始而不是**1**
-------------------------------------------
+将section的序号设置为从0开始而不是1
+-------------------------------------
 
 .. code-block:: latex
 
     \setcounter{section}{-1}
 
-矩阵的语法
+插入矩阵
 ----------
 
 .. code-block:: latex
@@ -41,7 +41,7 @@ LaTeX踩坑笔记
         A & B \\
         C & D
       \end{matrix}
-      $$
+     $$
 
 将 ``matrix`` 替换为 ``bmatrix`` 可为矩阵加中括号；替换为 ``pmatrix`` 可加小括号。
 

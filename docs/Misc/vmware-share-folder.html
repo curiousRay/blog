@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>2. 为Foobar2000添加MIDI播放支持 &mdash; Ray&#39;s sky</title>
+  <title>4. VMware共享文件夹设置问题 &mdash; Ray&#39;s sky</title>
   
 
   
@@ -41,8 +41,7 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. LaTeX踩坑笔记" href="latex-notes.html" />
-    <link rel="prev" title="1. Sphinx文档框架搭建速记" href="setup-sphinx.html" /> 
+    <link rel="prev" title="3. LaTeX踩坑笔记" href="latex-notes.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -116,9 +115,9 @@
 <li class="toctree-l2"><a class="reference internal" href="setup-sphinx.html#references">1.5. References</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">2. 为Foobar2000添加MIDI播放支持</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#midi">2.1. 下载MIDI解码器：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">2.2. 安装音效库文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foobar-midi.html">2. 为Foobar2000添加MIDI播放支持</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="foobar-midi.html#midi">2.1. 下载MIDI解码器：</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foobar-midi.html#id1">2.2. 安装音效库文件</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="latex-notes.html">3. LaTeX踩坑笔记</a><ul>
@@ -131,7 +130,7 @@
 <li class="toctree-l2"><a class="reference internal" href="latex-notes.html#id4">3.7. 调节页边距</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="vmware-share-folder.html">4. VMware共享文件夹设置问题</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. VMware共享文件夹设置问题</a></li>
 </ul>
 
             
@@ -177,13 +176,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>2. 为Foobar2000添加MIDI播放支持</li>
+      <li>4. VMware共享文件夹设置问题</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/Misc/foobar-midi.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/Misc/vmware-share-folder.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -196,23 +195,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="foobar2000midi">
-<h1>2. 为Foobar2000添加MIDI播放支持<a class="headerlink" href="#foobar2000midi" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="midi">
-<h2>2.1. 下载MIDI解码器：<a class="headerlink" href="#midi" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://www.foobar2000.org/components/view/foo_midi">http://www.foobar2000.org/components/view/foo_midi</a></p>
-<p>下载并打开名为 <span class="guilabel">foo_midi.fb2k-component</span> 的文件，该插件自动添加到组件库后点击Apply并重启播放器。</p>
+  <div class="section" id="vmware">
+<h1>4. VMware共享文件夹设置问题<a class="headerlink" href="#vmware" title="Permalink to this headline">¶</a></h1>
+<p>VMware虚拟机中安装open-vm-tools后，设置的共享文件夹不显示内容。解决方法如下：</p>
+<ol class="arabic">
+<li><p>在虚拟机设置中添加挂载路径；</p></li>
+<li><p>进入虚拟机，输入 <code class="docutils literal notranslate"><span class="pre">vmware-hgfsclient</span></code> 应能列出挂载的文件夹名；</p></li>
+<li><p>如果需要一次性挂载，执行下列命令</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir /mnt/hgfs
+sudo vmhgfs-fuse .host:/ mnt/hgfs
+</pre></div>
 </div>
-<div class="section" id="id1">
-<h2>2.2. 安装音效库文件<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>默认的MIDI音色非常难听。以钢琴音色Yamaha S-YXG50为例，切换音色库的方法如下：</p>
-<ol class="arabic simple">
-<li><p>在Foobar2000的安装目录下，新建名为 <span class="guilabel">vsti</span> 的文件夹，将 <strong>音效库文件</strong> 放进去。</p></li>
-<li><p>Foobar2000依次展开 Preferences → Advanced → Playback → MIDI Decoder → VSTi search patch ，填入 <span class="guilabel">vsti</span> 目录的绝对路径。</p></li>
-<li><p>展开 <code class="docutils literal notranslate"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Playback</span> <span class="pre">→</span> <span class="pre">Input</span> <span class="pre">→</span> <span class="pre">MIDI</span> <span class="pre">Player</span></code> ，选择Output一栏中的Plug-in，在下拉菜单中选择Yamaha S-YXG50即可。</p></li>
+</div></blockquote>
+</li>
+<li><p>如果要在每次开机后自动挂载共享文件夹，则需在 <span class="guilabel">/etc/fstab</span> 文件最后添加：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>.host:/ /mnt/hgfs fuse.vmhgfs-fuse allow_other,defaults <span class="m">0</span> <span class="m">0</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
 </ol>
-<p>附该音色库作者链接 <a class="reference external" href="http://veg.by/en/projects/syxg50">http://veg.by/en/projects/syxg50</a></p>
-</div>
 </div>
 
 
@@ -223,10 +227,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="latex-notes.html" class="btn btn-neutral float-right" title="3. LaTeX踩坑笔记" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="setup-sphinx.html" class="btn btn-neutral float-left" title="1. Sphinx文档框架搭建速记" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="latex-notes.html" class="btn btn-neutral float-left" title="3. LaTeX踩坑笔记" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
