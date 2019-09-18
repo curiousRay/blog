@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. 为Foobar2000添加MIDI播放支持 &mdash; Ray&#39;s sky</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/ga.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="1. Sphinx文档框架搭建速记" href="setup-sphinx.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Ray's sky
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Class1</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../test.html">1. TEST</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#fig">1.1. fig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#img">1.2. img</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#literal-blocks">1.3. Literal Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#line-blocks">1.4. Line Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#block-quotes">1.5. Block Quotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#tip">1.6. tip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#compound-paragraph">1.7. compound paragraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#guilabel">1.8. guilabel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#downloadlink">1.9. downloadlink</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Misc</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="setup-sphinx.html">1. Sphinx文档框架搭建速记</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup-sphinx.html#id2">1.1. 安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-sphinx.html#id3">1.2. 构建</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-sphinx.html#id4">1.3. 自定义顶级域名</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-sphinx.html#id6">1.4. 定制</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="setup-sphinx.html#id7">1.4.1. 自定义404页面</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup-sphinx.html#id9">1.4.2. 安装主题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup-sphinx.html#mathjax">1.4.3. 从外部来源加载MathJax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup-sphinx.html#id11">1.4.4. 设置代码高亮配色</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup-sphinx.html#cssjs">1.4.5. 添加自定义CSS和JS文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup-sphinx.html#favicon">1.4.6. 设置favicon</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="setup-sphinx.html#references">1.5. References</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. 为Foobar2000添加MIDI播放支持</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#midi">2.1. 下载MIDI解码器：</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">2.2. 安装音效库文件</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ray's sky</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>2. 为Foobar2000添加MIDI播放支持</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Misc/foobar-midi.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="foobar2000midi">
+<h1>2. 为Foobar2000添加MIDI播放支持<a class="headerlink" href="#foobar2000midi" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="midi">
+<h2>2.1. 下载MIDI解码器：<a class="headerlink" href="#midi" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.foobar2000.org/components/view/foo_midi">http://www.foobar2000.org/components/view/foo_midi</a></p>
+<p>下载并打开名为 <span class="guilabel">foo_midi.fb2k-component</span> 的文件，该插件自动添加到组件库后点击Apply并重启播放器。</p>
+</div>
+<div class="section" id="id1">
+<h2>2.2. 安装音效库文件<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>默认的MIDI音色非常难听。以钢琴音色Yamaha S-YXG50为例，切换音色库的方法如下：</p>
+<ol class="arabic simple">
+<li><p>在Foobar2000的安装目录下，新建名为 <span class="guilabel">vsti</span> 的文件夹，将 <strong>音效库文件</strong> 放进去。</p></li>
+<li><p>Foobar2000依次展开 Preferences → Advanced → Playback → MIDI Decoder → VSTi search patch ，填入 <span class="guilabel">vsti</span> 目录的绝对路径。</p></li>
+<li><p>展开 <code class="docutils literal notranslate"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Playback</span> <span class="pre">→</span> <span class="pre">Input</span> <span class="pre">→</span> <span class="pre">MIDI</span> <span class="pre">Player</span></code> ，选择Output一栏中的Plug-in，在下拉菜单中选择Yamaha S-YXG50即可。</p></li>
+</ol>
+<p>附该音色库作者链接 <a class="reference external" href="http://veg.by/en/projects/syxg50">http://veg.by/en/projects/syxg50</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="setup-sphinx.html" class="btn btn-neutral float-left" title="1. Sphinx文档框架搭建速记" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, curiousRay. Content licensed under CC BY 3.0
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-148061851-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

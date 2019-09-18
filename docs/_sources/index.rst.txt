@@ -18,3 +18,6 @@
    :numbered:
 
    Misc/setup-sphinx
+   Misc/foobar-midi
+   Misc/latex-notes
+
