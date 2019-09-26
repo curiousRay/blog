@@ -17,6 +17,8 @@
    :caption: Misc
    :numbered:
 
+   Misc/python-ml
+   Misc/setup-tgbot
    Misc/setup-sphinx
    Misc/foobar-midi
    Misc/latex-notes

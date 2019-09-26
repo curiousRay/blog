@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4. 为Foobar2000添加MIDI播放支持 &mdash; Ray&#39;s sky</title>
+  <title>1. 基于Python的机器学习系统设计 &mdash; Ray&#39;s sky</title>
   
 
   
@@ -41,8 +41,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. LaTeX踩坑笔记" href="latex-notes.html" />
-    <link rel="prev" title="3. Sphinx文档框架搭建速记" href="setup-sphinx.html" /> 
+    <link rel="next" title="2. Telegram bot 开发环境搭建" href="setup-tgbot.html" />
+    <link rel="prev" title="1. TEST" href="../test.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,8 +100,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Misc</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="python-ml.html">1. 基于Python的机器学习系统设计</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-ml.html#id1">1.1. 第三章 将数据变为信息</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. 基于Python的机器学习系统设计</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">1.1. 第三章 将数据变为信息</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="setup-tgbot.html">2. Telegram bot 开发环境搭建</a><ul>
@@ -128,9 +128,9 @@
 <li class="toctree-l2"><a class="reference internal" href="setup-sphinx.html#references">3.5. References</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">4. 为Foobar2000添加MIDI播放支持</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#midi">4.1. 下载MIDI解码器：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">4.2. 安装音效库文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foobar-midi.html">4. 为Foobar2000添加MIDI播放支持</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="foobar-midi.html#midi">4.1. 下载MIDI解码器：</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foobar-midi.html#id1">4.2. 安装音效库文件</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="latex-notes.html">5. LaTeX踩坑笔记</a><ul>
@@ -189,13 +189,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>4. 为Foobar2000添加MIDI播放支持</li>
+      <li>1. 基于Python的机器学习系统设计</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/Misc/foobar-midi.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/Misc/python-ml.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -208,22 +208,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="foobar2000midi">
-<h1>4. 为Foobar2000添加MIDI播放支持<a class="headerlink" href="#foobar2000midi" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="midi">
-<h2>4.1. 下载MIDI解码器：<a class="headerlink" href="#midi" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://www.foobar2000.org/components/view/foo_midi">http://www.foobar2000.org/components/view/foo_midi</a></p>
-<p>下载并打开名为 <span class="guilabel">foo_midi.fb2k-component</span> 的文件，该插件自动添加到组件库后点击Apply并重启播放器。</p>
-</div>
+  <div class="section" id="python">
+<h1>1. 基于Python的机器学习系统设计<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>4.2. 安装音效库文件<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>默认的MIDI音色非常难听。以钢琴音色Yamaha S-YXG50为例，切换音色库的方法如下：</p>
-<ol class="arabic simple">
-<li><p>在Foobar2000的安装目录下，新建名为 <span class="guilabel">vsti</span> 的文件夹，将 <strong>音效库文件</strong> 放进去。</p></li>
-<li><p>Foobar2000依次展开 Preferences → Advanced → Playback → MIDI Decoder → VSTi search patch ，填入 <span class="guilabel">vsti</span> 目录的绝对路径。</p></li>
-<li><p>展开 <code class="docutils literal notranslate"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Playback</span> <span class="pre">→</span> <span class="pre">Input</span> <span class="pre">→</span> <span class="pre">MIDI</span> <span class="pre">Player</span></code> ，选择Output一栏中的Plug-in，在下拉菜单中选择Yamaha S-YXG50即可。</p></li>
-</ol>
-<p>附该音色库作者链接 <a class="reference external" href="http://veg.by/en/projects/syxg50">http://veg.by/en/projects/syxg50</a></p>
+<h2>1.1. 第三章 将数据变为信息<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>数据探索的对象是数据的**成分**和数据的**结构**。</p>
+<dl class="simple">
+<dt>并行化</dt><dd><p>将学习算法分解为自适应查询序列，并且并行地处理这些查询；或在多台机器上运行同一算法，每台机器采用不同的参数配置。Map reduce的开源版本就是Hadoop。</p>
+</dd>
+<dt>流式处理</dt><dd><p>过量、过快的输入数据难以存储，就必要在数据流层面进行分析。</p>
+</dd>
+<dt>数据模型</dt><dd><p>描述数据是如何组织的。</p>
+<ul class="simple">
+<li><p>Sturcture （行和列；节点和边；键值对）</p></li>
+<li><p>Constraints （“个数”只能为自然数值）</p></li>
+<li><p>Operations （根据指定键值寻找特定值）</p></li>
+</ul>
+</dd>
+<dt>数据来源</dt><dd><p>数据库、HTML文档、自然语言、图像、API、信号（如声音）。</p>
+</dd>
+<dt>数据清洗</dt><dd><ul class="simple">
+<li><p>处理缺失数据；</p></li>
+<li><p>导入数据（如从pdf文件中）；</p></li>
+<li><p>数据类型转换。</p></li>
+</ul>
+</dd>
+<dt>数据可视化</dt><dd><ul class="simple">
+<li><p>明确数据类型后将其映射为视觉元素：位置、大小、纹理、颜色、方向、形状；</p></li>
+<li><p>考虑视觉元素的感知特性（最敏感到最不敏感）：位置、长度、角度、坡度、面积、体积、颜色、密度。</p></li>
+</ul>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -235,10 +250,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="latex-notes.html" class="btn btn-neutral float-right" title="5. LaTeX踩坑笔记" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="setup-tgbot.html" class="btn btn-neutral float-right" title="2. Telegram bot 开发环境搭建" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="setup-sphinx.html" class="btn btn-neutral float-left" title="3. Sphinx文档框架搭建速记" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../test.html" class="btn btn-neutral float-left" title="1. TEST" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4. 为Foobar2000添加MIDI播放支持 &mdash; Ray&#39;s sky</title>
+  <title>2. Telegram bot 开发环境搭建 &mdash; Ray&#39;s sky</title>
   
 
   
@@ -41,8 +41,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. LaTeX踩坑笔记" href="latex-notes.html" />
-    <link rel="prev" title="3. Sphinx文档框架搭建速记" href="setup-sphinx.html" /> 
+    <link rel="next" title="3. Sphinx文档框架搭建速记" href="setup-sphinx.html" />
+    <link rel="prev" title="1. 基于Python的机器学习系统设计" href="python-ml.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -104,12 +104,12 @@
 <li class="toctree-l2"><a class="reference internal" href="python-ml.html#id1">1.1. 第三章 将数据变为信息</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="setup-tgbot.html">2. Telegram bot 开发环境搭建</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="setup-tgbot.html#python-setuptools">2.1. 获取python-setuptools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup-tgbot.html#pythonvirtualenv">2.2. 安装Python虚拟环境virtualenv</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup-tgbot.html#screen">2.3. 使用screen来保证进程常驻</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup-tgbot.html#id1">2.4. 开始使用框架</a></li>
-<li class="toctree-l2"><a class="reference internal" href="setup-tgbot.html#id6">2.5. 其它</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Telegram bot 开发环境搭建</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#python-setuptools">2.1. 获取python-setuptools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pythonvirtualenv">2.2. 安装Python虚拟环境virtualenv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#screen">2.3. 使用screen来保证进程常驻</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">2.4. 开始使用框架</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">2.5. 其它</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="setup-sphinx.html">3. Sphinx文档框架搭建速记</a><ul>
@@ -128,9 +128,9 @@
 <li class="toctree-l2"><a class="reference internal" href="setup-sphinx.html#references">3.5. References</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">4. 为Foobar2000添加MIDI播放支持</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#midi">4.1. 下载MIDI解码器：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">4.2. 安装音效库文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foobar-midi.html">4. 为Foobar2000添加MIDI播放支持</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="foobar-midi.html#midi">4.1. 下载MIDI解码器：</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foobar-midi.html#id1">4.2. 安装音效库文件</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="latex-notes.html">5. LaTeX踩坑笔记</a><ul>
@@ -189,13 +189,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>4. 为Foobar2000添加MIDI播放支持</li>
+      <li>2. Telegram bot 开发环境搭建</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/Misc/foobar-midi.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/Misc/setup-tgbot.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -208,22 +208,95 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="foobar2000midi">
-<h1>4. 为Foobar2000添加MIDI播放支持<a class="headerlink" href="#foobar2000midi" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="midi">
-<h2>4.1. 下载MIDI解码器：<a class="headerlink" href="#midi" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="http://www.foobar2000.org/components/view/foo_midi">http://www.foobar2000.org/components/view/foo_midi</a></p>
-<p>下载并打开名为 <span class="guilabel">foo_midi.fb2k-component</span> 的文件，该插件自动添加到组件库后点击Apply并重启播放器。</p>
+  <div class="section" id="telegram-bot">
+<h1>2. Telegram bot 开发环境搭建<a class="headerlink" href="#telegram-bot" title="Permalink to this headline">¶</a></h1>
+<p>本文总结了搭建Bot开发环境的基本步骤。在CentOS 7系统中使用 <a class="reference external" href="https://github.com/python-telegram-bot/python-telegram-bot">python-telegram-bot</a> 框架。</p>
+<p>在获得自己的Bot的TOKEN后，我们需要打开服务器的外网 <strong>443</strong> 端口以保证数据收发正常进行。</p>
+<div class="section" id="python-setuptools">
+<h2>2.1. 获取python-setuptools<a class="headerlink" href="#python-setuptools" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>yum install git python-setuptools -y
+git clone https://github.com/python-telegram-bot/python-telegram-bot --recursive
+</pre></div>
+</div>
+</div>
+<div class="section" id="pythonvirtualenv">
+<h2>2.2. 安装Python虚拟环境virtualenv<a class="headerlink" href="#pythonvirtualenv" title="Permalink to this headline">¶</a></h2>
+<p>让bot运行在虚拟环境中能保证不与将来执行的其他脚本发生冲突。首先需要安装**python-pip**</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># 安装epel扩展源</span>
+sudo yum -y install epel-release
+
+<span class="c1"># 安装python-pip</span>
+sudo yum -y install python-pip
+sudo yum clean all
+pip install --upgrade pip
+
+<span class="c1"># 安装虚拟环境</span>
+pip install virtualenv
+</pre></div>
+</div>
+<p>进入到想存放虚拟环境的目录，执行</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>virtualenv myEnvName
+</pre></div>
+</div>
+<p>这样就创建了一个名为 <code class="docutils literal notranslate"><span class="pre">myEnvName</span></code> 的虚拟环境，在当前目录下会生成同名的文件夹。</p>
+</div>
+<div class="section" id="screen">
+<h2>2.3. 使用screen来保证进程常驻<a class="headerlink" href="#screen" title="Permalink to this headline">¶</a></h2>
+<p>当远程连接的会话窗口被关闭时，发送 <code class="docutils literal notranslate"><span class="pre">logout</span></code> 命令会导致bot的进程被杀掉。因此可以通过screen工具保留一个shell会话。</p>
+<ul class="simple">
+<li><p>安装screen：</p></li>
+</ul>
+<p>&lt;pre&gt;&lt;code class=”bash”&gt;yum install screen -y
+&lt;/code&gt;&lt;/pre&gt;
+输入`screen`以新建窗口，在这个窗口中我们继续进行操作。</p>
 </div>
 <div class="section" id="id1">
-<h2>4.2. 安装音效库文件<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>默认的MIDI音色非常难听。以钢琴音色Yamaha S-YXG50为例，切换音色库的方法如下：</p>
-<ol class="arabic simple">
-<li><p>在Foobar2000的安装目录下，新建名为 <span class="guilabel">vsti</span> 的文件夹，将 <strong>音效库文件</strong> 放进去。</p></li>
-<li><p>Foobar2000依次展开 Preferences → Advanced → Playback → MIDI Decoder → VSTi search patch ，填入 <span class="guilabel">vsti</span> 目录的绝对路径。</p></li>
-<li><p>展开 <code class="docutils literal notranslate"><span class="pre">Preferences</span> <span class="pre">→</span> <span class="pre">Playback</span> <span class="pre">→</span> <span class="pre">Input</span> <span class="pre">→</span> <span class="pre">MIDI</span> <span class="pre">Player</span></code> ，选择Output一栏中的Plug-in，在下拉菜单中选择Yamaha S-YXG50即可。</p></li>
-</ol>
-<p>附该音色库作者链接 <a class="reference external" href="http://veg.by/en/projects/syxg50">http://veg.by/en/projects/syxg50</a></p>
+<h2>2.4. 开始使用框架<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>激活先前创建的虚拟环境：</p></li>
+</ul>
+<p>&lt;pre&gt;&lt;code class=”bash”&gt;cd myEnvName
+source bin/activate
+&lt;/code&gt;&lt;/pre&gt;</p>
+<ul class="simple">
+<li><p>安装python-telegram-bot框架：</p></li>
+</ul>
+<p>&lt;pre&gt;&lt;code class=”bash”&gt;cd python-telegram-bot
+python setup.py install
+&lt;/code&gt;&lt;/pre&gt;</p>
+<ul class="simple">
+<li><p>修改python机器人程序中的TOKEN为自己的字符串，就像：<a href="#id2"><span class="problematic" id="id3">`</span></a>123456789:AAGEbvjSadJcs_zFIPKnWqsPtSus_8zGHn0`（示例）</p></li>
+<li><p>在存放程序的目录中运行：</p></li>
+</ul>
+<p>&lt;pre&gt;&lt;code class=”bash”&gt;python yourScript.py &amp;&lt;/code&gt;&lt;/pre&gt;</p>
+<p>这里的符号`&amp;`表明程序在后台执行，这样执行后我们可以继续输入其他指令。此时显示如图</p>
+<p>&lt;span class=”image main”&gt;![tupian](<a class="reference external" href="https://cdn.raysky.net/p/tgbot-setup1.png">https://cdn.raysky.net/p/tgbot-setup1.png</a>)&lt;/span&gt;</p>
+<p>其中的`8252`是python后台进程。如果需要的话可以`kill`。此时我们可以安心地执行`deactivate`以退出虚拟环境，而后台进程可以一直运行。</p>
+<ul class="simple">
+<li><p>输入 <cite>screen -ls</cite>，显示窗口状态如图，数字为session id。</p></li>
+</ul>
+<p>&lt;span class=”image main”&gt;![tupian](<a class="reference external" href="https://cdn.raysky.net/p/tgbot-setup2.png">https://cdn.raysky.net/p/tgbot-setup2.png</a>)&lt;/span&gt;</p>
+<ul class="simple">
+<li><p>输入 <a href="#id4"><span class="problematic" id="id5">`</span></a>screen -d session_id`以detach窗口</p></li>
+</ul>
+<p>此时可放心关闭终端程序。</p>
+<p>下次登录后，如果想要回到原来的窗口，只需要输入`screen -d session_id`，重新连接到窗口。</p>
+</div>
+<div class="section" id="id6">
+<h2>2.5. 其它<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>有时在执行Bot的python脚本时会出现以下错误</p></li>
+</ul>
+<p><cite>6 - __main__ - WARNING - Update “None” caused error “Conflict: terminated by other long poll or webhook (409)”</cite></p>
+<p>只需查看python的pid，kill之后重试就行了。</p>
+<ul class="simple">
+<li><p>如何kill进程？</p></li>
+</ul>
+<p><cite>kill -s 9 _pid_</cite></p>
+<ul class="simple">
+<li><p>想要关闭Bot？</p></li>
+</ul>
+<p>输入：<a href="#id7"><span class="problematic" id="id8">`</span></a>screen -X -S session_id quit`删除会话窗口，也就意味着关闭Bot。</p>
 </div>
 </div>
 
@@ -235,10 +308,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="latex-notes.html" class="btn btn-neutral float-right" title="5. LaTeX踩坑笔记" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="setup-sphinx.html" class="btn btn-neutral float-right" title="3. Sphinx文档框架搭建速记" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="setup-sphinx.html" class="btn btn-neutral float-left" title="3. Sphinx文档框架搭建速记" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="python-ml.html" class="btn btn-neutral float-left" title="1. 基于Python的机器学习系统设计" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
