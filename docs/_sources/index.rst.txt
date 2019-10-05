@@ -14,13 +14,21 @@
 
 .. toctree::
    :maxdepth: 1
+   :caption: Notes
+   :numbered:
+
+   Note-taking/python-ml
+
+.. toctree::
+   :maxdepth: 1
    :caption: Misc
    :numbered:
 
-   Misc/python-ml
-   Misc/setup-tgbot
    Misc/setup-sphinx
-   Misc/foobar-midi
-   Misc/latex-notes
+   Misc/ros-basics
    Misc/vmware-share-folder
+   Misc/latex-notes
+   Misc/foobar-midi
+   Misc/setup-tgbot
+
 

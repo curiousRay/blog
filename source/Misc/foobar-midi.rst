@@ -14,7 +14,7 @@ http://www.foobar2000.org/components/view/foo_midi
 
 默认的MIDI音色非常难听。以钢琴音色Yamaha S-YXG50为例，切换音色库的方法如下：
 
-1. 在Foobar2000的安装目录下，新建名为 :guilabel:`vsti` 的文件夹，将 **音效库文件** 放进去。
+1. 在Foobar2000的安装目录下，新建名为 :guilabel:`vsti` 的文件夹，放入 `音效库文件 <http://veg.by/files/midisynth/yamaha_syxg50_vsti.7z>`_ 。
 
 2. Foobar2000依次展开 Preferences → Advanced → Playback → MIDI Decoder → VSTi search patch ，填入 :guilabel:`vsti` 目录的绝对路径。
 
