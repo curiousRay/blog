@@ -90,7 +90,7 @@ ROS编程基础操作
 .. figure:: https://cdn.raysky.net/p/ros-1st-time4.PNG
    :align: center
 
-新建新终端窗口，打开 **turtlesim** 包的 **turtlesim_node节点**。
+新建新终端窗口，启动 **turtlesim** 包的 **turtlesim_node节点**。
 
 .. code-block:: sh
 
