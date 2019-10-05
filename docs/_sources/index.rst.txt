@@ -17,18 +17,18 @@
    :caption: Notes
    :numbered:
 
-   Note-taking/python-ml
+   notes/python-ml
 
 .. toctree::
    :maxdepth: 1
    :caption: Misc
    :numbered:
 
-   Misc/setup-sphinx
-   Misc/ros-basics
-   Misc/vmware-share-folder
-   Misc/latex-notes
-   Misc/foobar-midi
-   Misc/setup-tgbot
+   misc/setup-sphinx
+   misc/ros-basics
+   misc/vmware-share-folder
+   misc/latex-notes
+   misc/foobar-midi
+   misc/setup-tgbot
 
 
