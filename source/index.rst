@@ -6,7 +6,7 @@
 .. include:: ./about.rst
 
 .. toctree::
-   :caption: Class1
+   :caption: Test
    :maxdepth: 1
    :numbered:
 
