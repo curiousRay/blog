@@ -1,0 +1,21 @@
+/* self-defined styles */
+
+/* code highlight size*/
+.rst-content pre.literal-block, .rst-content div[class^='highlight'] pre, .rst-content .linenodiv pre {
+    font-size: 14px;
+}
+
+/* code block caption size */
+.rst-content .code-block-caption {
+    font-size: 100%;
+}
+
+/* inline code font size */
+code, .rst-content tt, .rst-content code {
+    font-size: 90%;
+}
+
+/* banner bgimg 300*92.812 */
+.wy-side-nav-search {
+    background-image: url(https://cdn.raysky.net/assets/banner/docbanner.jpg)
+}

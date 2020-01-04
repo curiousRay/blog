@@ -1,0 +1,487 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1. TEST &mdash; Ray&#39;s sky</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/ga.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. 基于Python的机器学习系统设计" href="notes/python-ml.html" />
+    <link rel="prev" title="The Front Page" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Ray's sky
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Test</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. TEST</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fig">1.1. fig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#img">1.2. img</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#literal-blocks">1.3. Literal Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#line-blocks">1.4. Line Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#block-quotes">1.5. Block Quotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tip">1.6. tip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compound-paragraph">1.7. compound paragraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#guilabel">1.8. guilabel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#downloadlink">1.9. downloadlink</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notes/python-ml.html">1. 基于Python的机器学习系统设计</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notes/python-ml.html#id1">1.1. 第三章 将数据变为信息</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Misc</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="misc/setup-sphinx.html">1. Sphinx文档框架搭建速记</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="misc/setup-sphinx.html#id2">1.1. 安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/setup-sphinx.html#id3">1.2. 构建</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/setup-sphinx.html#id4">1.3. 自定义顶级域名</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/setup-sphinx.html#id6">1.4. 定制</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="misc/setup-sphinx.html#id7">1.4.1. 自定义404页面</a></li>
+<li class="toctree-l3"><a class="reference internal" href="misc/setup-sphinx.html#id9">1.4.2. 安装主题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="misc/setup-sphinx.html#mathjax">1.4.3. 从外部来源加载MathJax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="misc/setup-sphinx.html#id11">1.4.4. 设置代码高亮配色</a></li>
+<li class="toctree-l3"><a class="reference internal" href="misc/setup-sphinx.html#cssjs">1.4.5. 添加自定义CSS和JS文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="misc/setup-sphinx.html#favicon">1.4.6. 设置favicon</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="misc/setup-sphinx.html#references">1.5. References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="misc/ros-basics.html">2. ROS编程基础操作</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="misc/ros-basics.html#id2">2.1. 搭建安装环境</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="misc/ros-basics.html#ubuntu">2.1.1. 配置Ubuntu软件库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="misc/ros-basics.html#id3">2.1.2. 执行安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="misc/ros-basics.html#id4">2.1.3. 创建ROS工作空间</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="misc/ros-basics.html#id5">2.2. 进行简单的测试</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="misc/ros-basics.html#id6">2.2.1. 配置环境变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="misc/ros-basics.html#id8">2.2.2. 运行示例程序</a></li>
+<li class="toctree-l3"><a class="reference internal" href="misc/ros-basics.html#rqt">2.2.3. 使用rqt插件查看消息传输关系</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="misc/ros-basics.html#c">2.3. 使用C++编写简单的功能包</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="misc/ros-basics.html#id9">2.3.1. 环境设置与创建功能包</a></li>
+<li class="toctree-l3"><a class="reference internal" href="misc/ros-basics.html#id10">2.3.2. 编写C++程序</a></li>
+<li class="toctree-l3"><a class="reference internal" href="misc/ros-basics.html#id11">2.3.3. 构建与运行</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="misc/ros-basics.html#references">2.4. References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="misc/vmware-share-folder.html">3. VMware共享文件夹设置问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc/latex-notes.html">4. LaTeX踩坑笔记</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="misc/latex-notes.html#id1">4.1. 正确渲染汉字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/latex-notes.html#matlab">4.2. 插入MATLAB代码块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/latex-notes.html#section">4.3. 将section的标题由默认的居中改为左对齐</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/latex-notes.html#section01">4.4. 将section的序号设置为从0开始而不是1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/latex-notes.html#id2">4.5. 插入矩阵</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/latex-notes.html#id3">4.6. 插入来自MATLAB的图片</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/latex-notes.html#id4">4.7. 调节页边距</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="misc/foobar-midi.html">5. 为Foobar2000添加MIDI播放支持</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="misc/foobar-midi.html#midi">5.1. 下载MIDI解码器：</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/foobar-midi.html#id1">5.2. 安装音效库文件</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="misc/setup-tgbot.html">6. Telegram bot 开发环境搭建</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="misc/setup-tgbot.html#python-setuptools">6.1. 获取python-setuptools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/setup-tgbot.html#pythonvirtualenv">6.2. 安装Python虚拟环境virtualenv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/setup-tgbot.html#screen">6.3. 使用screen来保证进程常驻</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/setup-tgbot.html#id1">6.4. 开始使用框架</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc/setup-tgbot.html#id2">6.5. 其它</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ray's sky</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>1. TEST</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/test.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="test">
+<h1>1. TEST<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h1>
+<p>This is a test. Here is an equation:
+<span class="math notranslate nohighlight">\(X_{0:5} = (X_0, X_1, X_2, X_3, X_4)\)</span>.
+Here is another:</p>
+<div class="math notranslate nohighlight" id="equation-this-is-a-label">
+<span class="eqno">(1)<a class="headerlink" href="#equation-this-is-a-label" title="Permalink to this equation">¶</a></span>\[\nabla^2 f =
+\frac{1}{r^2} \frac{\partial}{\partial r}
+\left( r^2 \frac{\partial f}{\partial r} \right)\]</div>
+<p>Install the package (or add it to your <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file):</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">This is a list table with images in it.</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id2">
+<img alt="https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg" src="https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg" />
+<p class="caption"><span class="caption-text">This is a short caption for a figure.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-default" id="id3">
+<img alt="https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg" src="https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg" />
+<p class="caption"><span class="caption-text">This is a long caption for a figure. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Donec porttitor dolor in odio posuere, vitae ornare libero mattis. In lobortis justo vestibulum nibh aliquet, non.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="fig">
+<h2>1.1. fig<a class="headerlink" href="#fig" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<img alt="https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg" src="https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg" />
+</div>
+</div>
+<div class="section" id="img">
+<h2>1.2. img<a class="headerlink" href="#img" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://cn.bing.com"><img alt="https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg" src="https://sphinx-rtd-theme.readthedocs.io/en/stable/_images/yi_jing_01_chien.jpg" /></a>
+</div>
+<div class="section" id="literal-blocks">
+<h2>1.3. Literal Blocks<a class="headerlink" href="#literal-blocks" title="Permalink to this headline">¶</a></h2>
+<p>Literal blocks are indicated with a double-colon (“::”) at the end of
+the preceding paragraph (over there <code class="docutils literal notranslate"><span class="pre">--&gt;</span></code>).  They can be indented:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">literal_block</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;is left as-is&#39;</span>
+    <span class="n">spaces_and_linebreaks</span> <span class="o">=</span> <span class="s1">&#39;are preserved&#39;</span>
+    <span class="n">markup_processing</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>Or they can be quoted without indentation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt; Great idea!
+&gt;
+&gt; Why didn&#39;t I think of that?
+</pre></div>
+</div>
+</div>
+<div class="section" id="line-blocks">
+<h2>1.4. Line Blocks<a class="headerlink" href="#line-blocks" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">This is a line block.  It ends with a blank line.</div>
+<div class="line-block">
+<div class="line">Each new line begins with a vertical bar (“|”).</div>
+<div class="line">Line breaks and initial indents are preserved.</div>
+</div>
+<div class="line">Continuation lines are wrapped portions of long lines;
+they begin with a space in place of the vertical bar.</div>
+<div class="line-block">
+<div class="line">The left edge of a continuation line need not be aligned with
+the left edge of the text above it.</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">This is a second line block.</div>
+<div class="line"><br /></div>
+<div class="line">Blank lines are permitted internally, but they must begin with a “|”.</div>
+</div>
+<p>Take it away, Eric the Orchestra Leader!</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">A one, two, a one two three four</div>
+<div class="line"><br /></div>
+<div class="line">Half a bee, philosophically,</div>
+<div class="line-block">
+<div class="line">must, <em>ipso facto</em>, half not be.</div>
+</div>
+<div class="line">But half the bee has got to be,</div>
+<div class="line-block">
+<div class="line"><em>vis a vis</em> its entity.  D’you see?</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">But can a bee be said to be</div>
+<div class="line-block">
+<div class="line">or not to be an entire bee,</div>
+<div class="line-block">
+<div class="line">when half the bee is not a bee,</div>
+<div class="line-block">
+<div class="line">due to some ancient injury?</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="line">Singing…</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="block-quotes">
+<h2>1.5. Block Quotes<a class="headerlink" href="#block-quotes" title="Permalink to this headline">¶</a></h2>
+<p>Block quotes consist of indented body elements:</p>
+<blockquote>
+<div><p>My theory by A. Elk.  Brackets Miss, brackets.  This theory goes
+as follows and begins now.  All brontosauruses are thin at one
+end, much much thicker in the middle and then thin again at the
+far end.  That is my theory, it is mine, and belongs to me and I
+own it, and what it is too.</p>
+<p class="attribution">—Anne Elk (Miss)</p>
+</div></blockquote>
+</div>
+<div class="section" id="tip">
+<h2>1.6. tip<a class="headerlink" href="#tip" title="Permalink to this headline">¶</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>15% if the service is good.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Thing1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Thing2</p></td>
+</tr>
+<tr class="row-even"><td><p>Thing3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>hihihih</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">this is cap</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hljs</span> <span class="kn">as</span> <span class="nn">hljs</span>
+<span class="kn">from</span> <span class="nn">hljs</span> <span class="kn">import</span> <span class="n">hljs</span>
+<span class="hll">
+</span><span class="k">def</span> <span class="nf">some_function</span><span class="p">():</span>
+<span class="hll">    <span class="n">interesting</span> <span class="o">=</span> <span class="bp">False</span>
+</span>    <span class="k">print</span> <span class="s1">&#39;This line is highlighted.&#39;</span>
+    <span class="k">print</span> <span class="s1">&#39;This one is not...&#39;</span>
+    <span class="k">print</span> <span class="s1">&#39;...but this one is.&#39;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<pre class="literal-block"># parsed-literal test
+curl -O <a class="reference external" href="http://someurl/release">http://someurl/release</a>-.tar-gz</pre>
+</div>
+<div class="section" id="compound-paragraph">
+<h2>1.7. compound paragraph<a class="headerlink" href="#compound-paragraph" title="Permalink to this headline">¶</a></h2>
+<div class="compound">
+<p class="compound-first">This paragraph contains a literal block:</p>
+<div class="compound-middle highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Connecting</span><span class="o">...</span> <span class="n">OK</span>
+<span class="n">Transmitting</span> <span class="n">data</span><span class="o">...</span> <span class="n">OK</span>
+<span class="n">Disconnecting</span><span class="o">...</span> <span class="n">OK</span>
+</pre></div>
+</div>
+<p class="compound-last">and thus consists of a simple paragraph, a literal block, and
+another simple paragraph.  Nonetheless it is semantically <em>one</em>
+paragraph.</p>
+</div>
+</div>
+<div class="section" id="guilabel">
+<h2>1.8. guilabel<a class="headerlink" href="#guilabel" title="Permalink to this headline">¶</a></h2>
+<p><span class="guilabel">Some action</span></p>
+</div>
+<div class="section" id="downloadlink">
+<h2>1.9. downloadlink<a class="headerlink" href="#downloadlink" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference download external" download="" href="https://cdn.bootcss.com/mathjax/2.7.6/latest.js"><code class="xref download docutils literal notranslate"><span class="pre">This</span> <span class="pre">and</span> <span class="pre">should</span> <span class="pre">wrap</span> <span class="pre">white-spaces</span></code></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="notes/python-ml.html" class="btn btn-neutral float-right" title="1. 基于Python的机器学习系统设计" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="The Front Page" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, curiousRay. Content licensed under CC BY 3.0
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-148061851-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,565 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. ROS编程基础操作 &mdash; Ray&#39;s sky</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/ga.js"></script>
+        <script async="async" type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3. VMware共享文件夹设置问题" href="vmware-share-folder.html" />
+    <link rel="prev" title="1. Sphinx文档框架搭建速记" href="setup-sphinx.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Ray's sky
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Test</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../test.html">1. TEST</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#fig">1.1. fig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#img">1.2. img</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#literal-blocks">1.3. Literal Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#line-blocks">1.4. Line Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#block-quotes">1.5. Block Quotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#tip">1.6. tip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#compound-paragraph">1.7. compound paragraph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#guilabel">1.8. guilabel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../test.html#downloadlink">1.9. downloadlink</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../notes/python-ml.html">1. 基于Python的机器学习系统设计</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notes/python-ml.html#id1">1.1. 第三章 将数据变为信息</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Misc</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="setup-sphinx.html">1. Sphinx文档框架搭建速记</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup-sphinx.html#id2">1.1. 安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-sphinx.html#id3">1.2. 构建</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-sphinx.html#id4">1.3. 自定义顶级域名</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-sphinx.html#id6">1.4. 定制</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="setup-sphinx.html#id7">1.4.1. 自定义404页面</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup-sphinx.html#id9">1.4.2. 安装主题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup-sphinx.html#mathjax">1.4.3. 从外部来源加载MathJax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup-sphinx.html#id11">1.4.4. 设置代码高亮配色</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup-sphinx.html#cssjs">1.4.5. 添加自定义CSS和JS文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup-sphinx.html#favicon">1.4.6. 设置favicon</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="setup-sphinx.html#references">1.5. References</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. ROS编程基础操作</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">2.1. 搭建安装环境</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ubuntu">2.1.1. 配置Ubuntu软件库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">2.1.2. 执行安装</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">2.1.3. 创建ROS工作空间</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">2.2. 进行简单的测试</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">2.2.1. 配置环境变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">2.2.2. 运行示例程序</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rqt">2.2.3. 使用rqt插件查看消息传输关系</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#c">2.3. 使用C++编写简单的功能包</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">2.3.1. 环境设置与创建功能包</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">2.3.2. 编写C++程序</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">2.3.3. 构建与运行</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#references">2.4. References</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vmware-share-folder.html">3. VMware共享文件夹设置问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="latex-notes.html">4. LaTeX踩坑笔记</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="latex-notes.html#id1">4.1. 正确渲染汉字</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex-notes.html#matlab">4.2. 插入MATLAB代码块</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex-notes.html#section">4.3. 将section的标题由默认的居中改为左对齐</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex-notes.html#section01">4.4. 将section的序号设置为从0开始而不是1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex-notes.html#id2">4.5. 插入矩阵</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex-notes.html#id3">4.6. 插入来自MATLAB的图片</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex-notes.html#id4">4.7. 调节页边距</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="foobar-midi.html">5. 为Foobar2000添加MIDI播放支持</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="foobar-midi.html#midi">5.1. 下载MIDI解码器：</a></li>
+<li class="toctree-l2"><a class="reference internal" href="foobar-midi.html#id1">5.2. 安装音效库文件</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="setup-tgbot.html">6. Telegram bot 开发环境搭建</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="setup-tgbot.html#python-setuptools">6.1. 获取python-setuptools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-tgbot.html#pythonvirtualenv">6.2. 安装Python虚拟环境virtualenv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-tgbot.html#screen">6.3. 使用screen来保证进程常驻</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-tgbot.html#id1">6.4. 开始使用框架</a></li>
+<li class="toctree-l2"><a class="reference internal" href="setup-tgbot.html#id2">6.5. 其它</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ray's sky</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>2. ROS编程基础操作</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/misc/ros-basics.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ros">
+<h1>2. ROS编程基础操作<a class="headerlink" href="#ros" title="Permalink to this headline">¶</a></h1>
+<p>本文描述了在Ubuntu 16.04环境下，使用ROS <a class="footnote-reference brackets" href="#id12" id="id1">1</a> 进行 ~~SLAM数据采集与显示~~的过程。</p>
+<div class="section" id="id2">
+<h2>2.1. 搭建安装环境<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ubuntu">
+<h3>2.1.1. 配置Ubuntu软件库<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h3>
+<p>确保 <code class="docutils literal notranslate"><span class="pre">restricted</span></code> 、 <code class="docutils literal notranslate"><span class="pre">universe</span></code> 和 <code class="docutils literal notranslate"><span class="pre">multiverse</span></code> 的选项被勾选。</p>
+<div class="figure align-center">
+<img alt="https://cdn.raysky.net/p/ros-1st-time1.PNG" src="https://cdn.raysky.net/p/ros-1st-time1.PNG" />
+</div>
+</div>
+<div class="section" id="id3">
+<h3>2.1.2. 执行安装<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># 更换镜像源</span>
+sudo sh -c <span class="s1">&#39;. /etc/lsb-release</span>
+<span class="s1">echo &quot;deb http://mirrors.ustc.edu.cn/ros/ubuntu/ $DISTRIB_CODENAME main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#39;</span>
+
+<span class="c1"># 添加密钥</span>
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 0xB01FA116
+
+<span class="c1"># 执行安装</span>
+sudo apt-get update
+sudo apt-get install ros-kinetic-desktop-full
+sudo rosdep init
+sudo rosdep update
+<span class="nb">echo</span> <span class="s2">&quot;source /opt/ros/kinetic/setup.bash&quot;</span> &gt;&gt; ~/.bashrc
+<span class="nb">source</span> ~/.bashrc
+sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
+
+<span class="c1"># 检查是否将环境变量加入.bashrc</span>
+printenv <span class="p">|</span> grep ROS
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>2.1.3. 创建ROS工作空间<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir -p ~/catkin_ws/src
+<span class="nb">cd</span> ~/catkin_ws/
+catkin_make
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>2.2. 进行简单的测试<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>2.2.1. 配置环境变量<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>执行 <code class="docutils literal notranslate"><span class="pre">roscore</span></code> 若提示无权限</p>
+<div class="figure align-center">
+<img alt="https://cdn.raysky.net/p/ros-1st-time2.PNG" src="https://cdn.raysky.net/p/ros-1st-time2.PNG" />
+</div>
+<p>则执行 <a class="footnote-reference brackets" href="#id13" id="id7">2</a>：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo rosdep fix-permissions
+</pre></div>
+</div>
+<p>显示如图</p>
+<div class="figure align-center">
+<img alt="https://cdn.raysky.net/p/ros-1st-time3.PNG" src="https://cdn.raysky.net/p/ros-1st-time3.PNG" />
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo rosdep fix-permissions
+<span class="nb">cd</span> ~/catkin_ws/
+<span class="nb">source</span> devel/setup.bash
+</pre></div>
+</div>
+<p>执行 <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$ROS_PACKAGE_PATH</span></code> 应能显示出一个路径，如：</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>/home/ray/Desktop/catkin_ws/src:/opt/ros/kinetic/share
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3>2.2.2. 运行示例程序<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>加载ROS核心</p>
+<div class="figure align-center">
+<img alt="https://cdn.raysky.net/p/ros-1st-time4.PNG" src="https://cdn.raysky.net/p/ros-1st-time4.PNG" />
+</div>
+<p>新建新终端窗口，启动 <strong>turtlesim</strong> 包的 <strong>turtlesim_node节点</strong>。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rosrun turtlesim turtlesim_node
+</pre></div>
+</div>
+<p>新建新终端窗口，通过键盘控制海龟运动。此窗口必须拥有焦点，键盘控制才能生效。</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rosrun turtlesim turtle_teleop_key
+</pre></div>
+</div>
+<div class="figure align-center">
+<img alt="https://cdn.raysky.net/p/ros-1st-time5.PNG" src="https://cdn.raysky.net/p/ros-1st-time5.PNG" />
+</div>
+</div>
+<div class="section" id="rqt">
+<h3>2.2.3. 使用rqt插件查看消息传输关系<a class="headerlink" href="#rqt" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># 执行安装</span>
+sudo apt-get install ros-kinetic-rqt
+sudo apt-get install ros-kinetic-rqt-common-plugins
+
+<span class="c1"># 在示例程序运行的同时，新建窗口执行</span>
+rosrun rqt_graph rqt_graph
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="c">
+<h2>2.3. 使用C++编写简单的功能包<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>2.3.1. 环境设置与创建功能包<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mkdir -p catkin_ws/src
+catkin_make
+</pre></div>
+</div>
+<p>设置环境变量（如果不这样做，每次启动终端都要执行一遍 <code class="docutils literal notranslate"><span class="pre">source</span></code> 命令）</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在文件 ~/.bashrc 添加</span>
+<span class="nb">source</span> ~/Desktop/catkin_ws/devel/setup.bash
+
+<span class="c1"># 创建功能包</span>
+<span class="nb">cd</span> catkin_ws/src
+catkin_create_pkg pkg_name std_msgs roscpp
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p><code class="docutils literal notranslate"><span class="pre">pkg_name</span></code> 只允许使用小写字母、数字和下划线，而且首字符必须是一个小写字母。</p>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>2.3.2. 编写C++程序<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">src/talker.cpp</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span> <span class="cp">#include</span> <span class="cpf">&quot;ros/ros.h&quot;</span><span class="cp"></span>
+ <span class="cp">#include</span> <span class="cpf">&quot;std_msgs/String.h&quot;</span><span class="cp"></span>
+ <span class="cp">#include</span> <span class="cpf">&lt;sstream&gt;</span><span class="cp"></span>
+
+ <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">ros</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">,</span> <span class="s">&quot;talker&quot;</span><span class="p">);</span>
+   <span class="c1">//set node name</span>
+
+   <span class="n">ros</span><span class="o">::</span><span class="n">NodeHandle</span> <span class="n">nh</span><span class="p">;</span>
+   <span class="n">ros</span><span class="o">::</span><span class="n">Publisher</span> <span class="n">pub</span> <span class="o">=</span> <span class="n">nh</span><span class="p">.</span><span class="n">advertise</span><span class="o">&lt;</span><span class="n">std_msgs</span><span class="o">::</span><span class="n">String</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;message&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
+   <span class="c1">//set this node as publisher</span>
+
+   <span class="n">ros</span><span class="o">::</span><span class="n">Rate</span> <span class="n">loop_rate</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+   <span class="c1">//set publish rate as 10Hz</span>
+
+   <span class="k">while</span> <span class="p">(</span><span class="n">ros</span><span class="o">::</span><span class="n">ok</span><span class="p">())</span> <span class="p">{</span>
+     <span class="n">std_msgs</span><span class="o">::</span><span class="n">String</span> <span class="n">msg</span><span class="p">;</span>
+     <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">;</span>
+     <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;default string&quot;</span><span class="p">;</span>
+     <span class="n">msg</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">ss</span><span class="p">.</span><span class="n">str</span><span class="p">();</span>
+     <span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">msg</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+     <span class="n">pub</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+     <span class="n">ros</span><span class="o">::</span><span class="n">spinOnce</span><span class="p">();</span>
+     <span class="c1">//if a subscriber comes, ros will update and read all topics</span>
+
+     <span class="n">loop_rate</span><span class="p">.</span><span class="n">sleep</span><span class="p">();</span>
+     <span class="c1">//hang on the program</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text">src/listener.cpp</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;ros/ros.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;std_msgs/String.h&quot;</span><span class="cp"></span>
+
+<span class="kt">void</span> <span class="nf">messageCallback</span><span class="p">(</span><span class="k">const</span> <span class="n">std_msgs</span><span class="o">::</span><span class="n">String</span><span class="o">::</span><span class="n">ConstPtr</span><span class="o">&amp;</span> <span class="n">msg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">ROS_INFO</span><span class="p">(</span><span class="s">&quot;I heard: [%s]&quot;</span><span class="p">,</span> <span class="n">msg</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">ros</span><span class="o">::</span><span class="n">init</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">argv</span><span class="p">,</span> <span class="s">&quot;listener&quot;</span><span class="p">);</span>
+  <span class="n">ros</span><span class="o">::</span><span class="n">NodeHandle</span> <span class="n">nh</span><span class="p">;</span>
+
+  <span class="n">ros</span><span class="o">::</span><span class="n">Subscriber</span> <span class="n">sub</span> <span class="o">=</span> <span class="n">nh</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s">&quot;mTopic&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">messageCallback</span><span class="p">);</span>
+  <span class="c1">//register callback function</span>
+
+  <span class="n">ros</span><span class="o">::</span><span class="n">spin</span><span class="p">();</span>
+  <span class="c1">//loop wait for callback function</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text">launch/mlaunch.launch</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;launch&gt;</span>
+  <span class="nt">&lt;node</span> <span class="na">name=</span><span class="s">&quot;listener&quot;</span> <span class="na">pkg=</span><span class="s">&quot;testcomm&quot;</span> <span class="na">type=</span><span class="s">&quot;listener&quot;</span> <span class="na">output=</span><span class="s">&quot;screen&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;node</span> <span class="na">name=</span><span class="s">&quot;talker&quot;</span> <span class="na">pkg=</span><span class="s">&quot;testcomm&quot;</span> <span class="na">type=</span><span class="s">&quot;talker&quot;</span> <span class="na">output=</span><span class="s">&quot;screen&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;sentence&quot;</span> <span class="na">value=</span><span class="s">&quot;hello, world!&quot;</span> <span class="na">type=</span><span class="s">&quot;str&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/launch&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>2.3.3. 构建与运行<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>修改项目文件夹下的 <span class="guilabel">CMakeLists.txt</span>。顺序不能颠倒。此处以同时编译两个程序为例。</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">2.8.3</span><span class="p">)</span>
+<span class="nb">project</span><span class="p">(</span><span class="s">testcomm</span><span class="p">)</span>
+
+<span class="nb">find_package</span><span class="p">(</span><span class="s">catkin</span> <span class="s">REQUIRED</span> <span class="s">COMPONENTS</span>
+  <span class="s">roscpp</span>
+  <span class="s">std_msgs</span>
+<span class="p">)</span>
+
+<span class="nb">catkin_package</span><span class="p">(</span>
+  <span class="s">INCLUDE_DIRS</span> <span class="s">include</span>
+  <span class="s">LIBRARIES</span> <span class="s">testcomm</span>
+  <span class="s">CATKIN_DEPENDS</span> <span class="s">roscpp</span> <span class="s">std_msgs</span>
+  <span class="s">DEPENDS</span> <span class="s">system_lib</span>
+<span class="p">)</span>
+
+<span class="nb">include_directories</span><span class="p">(</span>
+ <span class="s">include</span>
+  <span class="o">${</span><span class="nv">catkin_INCLUDE_DIRS</span><span class="o">}</span>
+<span class="p">)</span>
+
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">talker</span> <span class="s">src/talker.cpp</span><span class="p">)</span>
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">listener</span> <span class="s">src/listener.cpp</span><span class="p">)</span>
+
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">talker</span> <span class="o">${</span><span class="nv">catkin_LIBRARIES</span><span class="o">}</span><span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">listener</span> <span class="o">${</span><span class="nv">catkin_LIBRARIES</span><span class="o">}</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>执行构建命令：</p>
+<ul class="simple">
+<li><p>在 <span class="guilabel">catkin_ws</span> 目录下执行 <code class="docutils literal notranslate"><span class="pre">catkin_make</span></code> 即可构建此工作空间下所有的项目。</p></li>
+<li><p>执行 <code class="docutils literal notranslate"><span class="pre">catkin_make</span> <span class="pre">-DCATKIN_WHITELIST_PACKAGES=&quot;pkg_name&quot;</span></code> 可构建指定的项目。</p></li>
+</ul>
+<p>运行功能包。有两种运行方式：</p>
+<ul>
+<li><p>直接运行一个或多个节点：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rosrun mypackage mypackage_node
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>加载launch文件（推荐）：</p>
+<blockquote>
+<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>cd catkin_ws
+roslaunch mypackage mLaunch.launch</p>
+</div></blockquote>
+</li>
+</ul>
+<p>运行结果：</p>
+<div class="figure align-center">
+<img alt="https://cdn.raysky.net/p/ros-1st-time6.png" src="https://cdn.raysky.net/p/ros-1st-time6.png" />
+</div>
+<p>按 <strong>Ctrl+C</strong> 可以结束程序。</p>
+</div>
+</div>
+<div class="section" id="references">
+<h2>2.4. References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<dl class="footnote brackets">
+<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="https://wiki.ros.org/kinetic/Installation/Ubuntu">https://wiki.ros.org/kinetic/Installation/Ubuntu</a></p>
+</dd>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id7">2</a></span></dt>
+<dd><p><a class="reference external" href="https://answers.ros.org/question/60366/problem-with-roscore/">https://answers.ros.org/question/60366/problem-with-roscore/</a></p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="vmware-share-folder.html" class="btn btn-neutral float-right" title="3. VMware共享文件夹设置问题" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="setup-sphinx.html" class="btn btn-neutral float-left" title="1. Sphinx文档框架搭建速记" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, curiousRay. Content licensed under CC BY 3.0
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-148061851-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>
