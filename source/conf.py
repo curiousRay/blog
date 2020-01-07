@@ -58,9 +58,10 @@ html_static_path = ['_static']
 html_css_files = ['style.css']
 # html_javascript_files = ['https://www.googletagmanager.com/gtag/js?id=UA-148061851-1', 'ga.js']
 
+
 def setup(app):
-#    app.add_javascript('https://www.googletagmanager.com/gtag/js?id=UA-148061851-1')
-     app.add_javascript('ga.js')
+    # app.add_javascript('https://www.googletagmanager.com/gtag/js?id=UA-148061851-1')
+    app.add_javascript('ga.js')
 
 # https://github.com/readthedocs/sphinx_rtd_theme/issues/477
 
@@ -69,7 +70,7 @@ def setup(app):
 html_theme = 'sphinx_rtd_theme'
 
 html_theme_options = {
-    'analytics_id': 'UA-148061851-1',
+    'analytics_id': '',
     'canonical_url': '',
     'logo_only': False,
     'display_version': False,
