@@ -23,5 +23,3 @@ Licensing
 -----------
 
 Except where otherwise noted, content on this site is licensed under a `Creative Commons Attribution 3.0 International <https://creativecommons.org/licenses/by/3.0/deed.en>`_ license.
-
-------------
