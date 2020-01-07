@@ -260,8 +260,8 @@ ROS编程基础操作
 
    .. code-block:: sh
 
-   cd catkin_ws
-   roslaunch mypackage mLaunch.launch
+      cd catkin_ws
+      roslaunch mypackage mLaunch.launch
 
 运行结果：
 
