@@ -79,8 +79,8 @@ Github项目设置的pages选项勾选Force https，稍候即可实现http自动
 在插件列表中添加 `MathJax <https://www.mathjax.org/>`_ 并设置url。请注意其后所带的参数。
 
 .. code-block:: python
+    :caption: source/conf.py
 
-    # file: source/conf.py
     extensions = [
         ...
         "sphinx.ext.mathjax",
@@ -93,8 +93,8 @@ Github项目设置的pages选项勾选Force https，稍候即可实现http自动
 Sphinx使用 `Pygments <http://pygments.org/>`_ 作为默认高亮工具。
 
 .. code-block:: python
+    :caption: source/conf.py
 
-    # file: source/conf.py
     pygments_style = 'trac'
 
 其中自带样式列表可在 **Python命令行** 中执行如下代码查看
@@ -108,8 +108,8 @@ Sphinx使用 `Pygments <http://pygments.org/>`_ 作为默认高亮工具。
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
+    :caption: source/conf.py
 
-    # file: source/conf.py
     html_css_files = ['style.css']
     html_js_files = ['script.js']
 
@@ -119,8 +119,8 @@ Sphinx使用 `Pygments <http://pygments.org/>`_ 作为默认高亮工具。
 ^^^^^^^^^^^^^
 
 .. code-block:: python
+    :caption: source/conf.py
 
-    # file: source/conf.py
     html_favicon = 'favicon.ico'
 
 其中 :guilabel:`favicon.ico` 位于 :guilabel:`source` [#]_。

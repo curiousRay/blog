@@ -24,6 +24,7 @@
    :caption: Misc
    :numbered:
 
+   misc/setup-tf
    misc/setup-sphinx
    misc/ros-basics
    misc/vmware-share-folder

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4. VMware共享文件夹设置问题 &mdash; Ray&#39;s sky</title>
+  <title>1. Windows搭建tf2.0环境 &mdash; Ray&#39;s sky</title>
   
 
   
@@ -41,8 +41,8 @@
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. LaTeX踩坑笔记" href="latex-notes.html" />
-    <link rel="prev" title="3. ROS编程基础操作" href="ros-basics.html" /> 
+    <link rel="next" title="2. Sphinx文档框架搭建速记" href="setup-sphinx.html" />
+    <link rel="prev" title="1. 基于Python的机器学习系统设计" href="../notes/python-ml.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -107,8 +107,12 @@
 </ul>
 <p class="caption"><span class="caption-text">Misc</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="setup-tf.html">1. Win10 + Pycharm环境搭建tf2.0环境</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="setup-tf.html#id1">1.1. 软硬件配置</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Windows搭建tf2.0环境</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">1.1. 软硬件配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1.2. 搭建过程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#faq">1.3. FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example">1.4. Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#references">1.5. References</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="setup-sphinx.html">2. Sphinx文档框架搭建速记</a><ul>
@@ -149,7 +153,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ros-basics.html#references">3.4. References</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">4. VMware共享文件夹设置问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vmware-share-folder.html">4. VMware共享文件夹设置问题</a></li>
 <li class="toctree-l1"><a class="reference internal" href="latex-notes.html">5. LaTeX踩坑笔记</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="latex-notes.html#id1">5.1. 正确渲染汉字</a></li>
 <li class="toctree-l2"><a class="reference internal" href="latex-notes.html#matlab">5.2. 插入MATLAB代码块</a></li>
@@ -218,13 +222,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>4. VMware共享文件夹设置问题</li>
+      <li>1. Windows搭建tf2.0环境</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/misc/vmware-share-folder.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/misc/setup-tf.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -237,28 +241,105 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="vmware">
-<h1>4. VMware共享文件夹设置问题<a class="headerlink" href="#vmware" title="Permalink to this headline">¶</a></h1>
-<p>VMware虚拟机中安装open-vm-tools后，设置的共享文件夹不显示内容。解决方法如下：</p>
+  <div class="section" id="windowstf2-0">
+<h1>1. Windows搭建tf2.0环境<a class="headerlink" href="#windowstf2-0" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>1.1. 软硬件配置<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Python 3.7</p></li>
+<li><p>Nvidia GTX950m，驱动程序版本441.22</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>1.2. 搭建过程<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Pycharm创建项目，配置好虚拟环境。</p></li>
+<li><p>参照以下链接安装gpu版本的tf而非cpu版本的。执行 <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tensorflow-gpu</span></code></p></li>
+<li><p>仔细阅读 <a class="reference external" href="https://tensorflow.google.cn/install/gpu#software_requirements">https://tensorflow.google.cn/install/gpu#software_requirements</a> 标明的安装需求。如本文撰写时要求的CUDA版本为10.0，而英伟达官网最新版本为10.2。需要按tf标明版本来下载。</p></li>
+<li><p>安装CUDA，尽量装在C盘。</p></li>
+<li><p>下载cudnn <a class="footnote-reference brackets" href="#id4" id="id3">1</a> 。此模块是必须的，但不用安装，可存放在任意目录下。将其地址加到 <span class="guilabel">环境变量→系统变量→path</span> 中即可。</p></li>
+<li><p>编辑path如下。</p></li>
+</ol>
+<div class="figure align-center">
+<img alt="https://cdn.raysky.net/p/setup-tf1.png" src="https://cdn.raysky.net/p/setup-tf1.png" />
+</div>
+<ol class="arabic simple" start="7">
+<li><p>可以执行 <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">—upgrade</span> <span class="pre">tensorflow</span></code> 更新一下。</p></li>
+</ol>
+</div>
+<div class="section" id="faq">
+<h2>1.3. FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
-<li><p>在虚拟机设置中添加挂载路径；</p></li>
-<li><p>进入虚拟机，输入 <code class="docutils literal notranslate"><span class="pre">vmware-hgfsclient</span></code> 应能列出挂载的文件夹名；</p></li>
-<li><p>如果需要一次性挂载，执行下列命令</p>
+<li><p>提示找不到 <span class="guilabel">cudart64_100.dll</span></p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir /mnt/hgfs
-sudo vmhgfs-fuse .host:/ mnt/hgfs
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>如果要在每次开机后自动挂载共享文件夹，则需在 <span class="guilabel">/etc/fstab</span> 文件最后添加：</p>
-<blockquote>
-<div><div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>.host:/ /mnt/hgfs fuse.vmhgfs-fuse allow_other,defaults <span class="m">0</span> <span class="m">0</span>
-</pre></div>
-</div>
+<div><p>CUDA必须为10.0版本，且正确设置了环境变量。正确设置后应有如下输出：</p>
 </div></blockquote>
 </li>
 </ol>
+<div class="figure align-center">
+<img alt="https://cdn.raysky.net/p/setup-tf2.png" src="https://cdn.raysky.net/p/setup-tf2.png" />
+</div>
+<ol class="arabic" start="2">
+<li><p>Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2是什么意思</p>
+<blockquote>
+<div><p>AVX2需要通过编译安装才能使用。它可以提高代码编译性能，但也可不用。忽略即可。</p>
+</div></blockquote>
+</li>
+<li><p>输出栏有太多的红色字体信息</p>
+<blockquote>
+<div><p>tensorflow的log输出是红色的。可以修改代码文件，将无用的信息滤除。见下文示例代码的注释。</p>
+</div></blockquote>
+</li>
+<li><p>找不到类的某个属性。如报错：</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="s1">&#39;tensorflow&#39;</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;placeholder&#39;</span>
+</pre></div>
+</div>
+<p>原因：旧版数据结构的锅。tensorflow 1.x与2.0版本差异过大，兼容性差。不过有迁移工具可将旧版代码转换为新版代码。可参考：</p>
+</div>
+<div class="section" id="example">
+<h2>1.4. Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
+
+<span class="c1"># 忽略警告</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;TF_CPP_MIN_LOG_LEVEL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;2&#39;</span>
+
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c1"># 输入的摄氏温度以及其对应的华氏温度，前面两个故意写错了</span>
+<span class="n">celsius_q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span>  <span class="mi">0</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span>  <span class="mi">38</span><span class="p">],</span>  <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">fahrenheit_a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span>  <span class="mi">14</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>  <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">celsius_q</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;{} degrees Celsius = {} degrees Fahrenheit&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">fahrenheit_a</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+
+<span class="c1"># 输入后连接了只有一个神经单元的隐藏层</span>
+<span class="n">l0</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># 将网络层添加到序列模型中</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span><span class="n">l0</span><span class="p">])</span>
+
+<span class="c1"># 编译神经网络模型</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">optimizers</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="mf">0.1</span><span class="p">))</span>
+
+<span class="c1"># 训练模型</span>
+<span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">celsius_q</span><span class="p">,</span> <span class="n">fahrenheit_a</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Finished training the model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="references">
+<h2>1.5. References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
+<dd><p><a class="reference external" href="https://developer.nvidia.com/cudnn">https://developer.nvidia.com/cudnn</a></p>
+</dd>
+<dt class="label" id="id5"><span class="brackets">2</span></dt>
+<dd><p><a class="reference external" href="https://cloud.tencent.com/developer/article/1519704">https://cloud.tencent.com/developer/article/1519704</a></p>
+</dd>
+</dl>
+</div>
 </div>
 
 
@@ -269,10 +350,10 @@ sudo vmhgfs-fuse .host:/ mnt/hgfs
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="latex-notes.html" class="btn btn-neutral float-right" title="5. LaTeX踩坑笔记" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="setup-sphinx.html" class="btn btn-neutral float-right" title="2. Sphinx文档框架搭建速记" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ros-basics.html" class="btn btn-neutral float-left" title="3. ROS编程基础操作" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../notes/python-ml.html" class="btn btn-neutral float-left" title="1. 基于Python的机器学习系统设计" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
